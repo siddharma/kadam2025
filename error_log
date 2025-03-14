@@ -1,0 +1,17 @@
+[04-Aug-2016 19:30:34 Europe/Isle_of_Man] PHP Parse error:  syntax error, unexpected ''" class="getid" href="javascr' (T_CONSTANT_ENCAPSED_STRING) in /home/bitmyglobal/public_html/phgh/application/views/home.php on line 214
+[04-Aug-2016 19:33:47 Europe/Isle_of_Man] PHP Parse error:  syntax error, unexpected '1' (T_LNUMBER) in /home/bitmyglobal/public_html/phgh/application/views/home.php on line 209
+[04-Aug-2016 19:34:33 Europe/Isle_of_Man] PHP Parse error:  syntax error, unexpected '1' (T_LNUMBER) in /home/bitmyglobal/public_html/phgh/application/views/home.php on line 209
+[04-Aug-2016 19:34:40 Europe/Isle_of_Man] PHP Parse error:  syntax error, unexpected '1' (T_LNUMBER) in /home/bitmyglobal/public_html/phgh/application/views/home.php on line 209
+[04-Aug-2016 19:34:59 Europe/Isle_of_Man] PHP Parse error:  syntax error, unexpected 'help_id' (T_STRING) in /home/bitmyglobal/public_html/phgh/application/views/home.php on line 209
+[04-Aug-2016 19:37:03 Europe/Isle_of_Man] PHP Parse error:  syntax error, unexpected ',' in /home/bitmyglobal/public_html/phgh/application/views/home.php on line 209
+[04-Aug-2016 19:38:21 Europe/Isle_of_Man] PHP Parse error:  syntax error, unexpected '1' (T_LNUMBER) in /home/bitmyglobal/public_html/phgh/application/views/home.php on line 214
+[04-Aug-2016 19:39:23 Europe/Isle_of_Man] PHP Parse error:  syntax error, unexpected '.1' (T_DNUMBER) in /home/bitmyglobal/public_html/phgh/application/views/home.php on line 209
+[04-Aug-2016 19:39:58 Europe/Isle_of_Man] PHP Parse error:  syntax error, unexpected '.1' (T_DNUMBER) in /home/bitmyglobal/public_html/phgh/application/views/home.php on line 209
+[04-Aug-2016 19:40:05 Europe/Isle_of_Man] PHP Parse error:  syntax error, unexpected '1' (T_LNUMBER) in /home/bitmyglobal/public_html/phgh/application/views/home.php on line 209
+[04-Aug-2016 19:40:49 Europe/Isle_of_Man] PHP Parse error:  syntax error, unexpected '1' (T_LNUMBER) in /home/bitmyglobal/public_html/phgh/application/views/home.php on line 214
+[04-Aug-2016 19:40:51 Europe/Isle_of_Man] PHP Parse error:  syntax error, unexpected '1' (T_LNUMBER) in /home/bitmyglobal/public_html/phgh/application/views/home.php on line 214
+[04-Aug-2016 19:41:58 Europe/Isle_of_Man] PHP Parse error:  syntax error, unexpected '1' (T_LNUMBER) in /home/bitmyglobal/public_html/phgh/application/views/home.php on line 209
+[10-Aug-2016 18:48:52 Europe/Isle_of_Man] PHP Parse error:  syntax error, unexpected '*' in /home/bitmyglobal/public_html/phgh/application/controllers/register.php on line 182
+[10-Aug-2016 19:17:26 Europe/Isle_of_Man] PHP Fatal error:  Call to a member function getUsersLevelDetails() on a non-object in /home/bitmyglobal/public_html/phgh/application/controllers/help_provider.php on line 159
+[10-Aug-2016 19:19:55 Europe/Isle_of_Man] PHP Fatal error:  Call to undefined method Home_Model::getUsersLevelDetails() in /home/bitmyglobal/public_html/phgh/application/controllers/help_provider.php on line 161
+[10-Aug-2016 19:21:30 Europe/Isle_of_Man] PHP Fatal error:  Call to undefined method Home_Model::getUsersLevelDetails() in /home/bitmyglobal/public_html/phgh/application/controllers/help_provider.php on line 161
