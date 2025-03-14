@@ -240,7 +240,6 @@ We get the oxygen of crores in free of costs from trees, still we cut them. Thin
   <script src="<?php echo base_url();?>media/front/gogreen-template/js/jquery.js"></script>
   <script src="<?php echo base_url();?>media/front/gogreen-template/js/jquery.easing.1.3.js"></script>
   <script src="<?php echo base_url();?>media/front/gogreen-template/js/bootstrap.min.js"></script>
-  <script src="<?php echo base_url();?>media/front/gogreen-template/https://maps.googleapis.com/maps/api/js?key=AIzaSyD8HeI8o-c1NppZA-92oYlXakhDPYR7XMY"></script>
   <script src="<?php echo base_url();?>media/front/gogreen-template/js/jquery.isotope.min.js"></script>
   <script src="<?php echo base_url();?>media/front/gogreen-template/js/jquery.nicescroll.min.js"></script>
   <script src="<?php echo base_url();?>media/front/gogreen-template/js/fancybox/jquery.fancybox.pack.js"></script>

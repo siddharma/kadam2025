@@ -9,8 +9,6 @@
 #targetLayer{width:100%;text-align:center;}
 
 </style>
-<!--<script src="https://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script> -->
-
 <script src="https://code.jquery.com/jquery-1.8.0.min.js"></script>
 <script src="http://malsup.github.com/jquery.form.js"></script>
 <script>
@@ -114,11 +112,16 @@ $(document).ready(function() {
                     <?php 
                     for($i=12; $i>=1; $i--){ ?>
                         <tr>
-                    <td><?php echo $sponsered_user['sponser_id'][$i];?>
+                    <td>
+                        <?php echo $sponsered_user['sponser_id'][$i];?>
                         <input type="hidden" name="pnr_holder<?php echo $i;?>" value="<?php echo $sponsered_user['sponser_id'][$i];?>">
-                            <lable><b><?php echo '[ '.$sponsered_user['full_name'][$i].' ]';?></b></lable></td>
-              <td><input type="text" name="pnr_no<?php echo $i;?>" placeholder="Enter PNR No." ></td>
-              <td><input type="text" name="pnr_amount<?php echo $i;?>" style="width:50px" readonly></td>
+                            <!-- <lable><b><?php echo '[ '.$sponsered_user['full_name'][$i].' ]';?></b></lable> -->
+                    </td>
+                    <td><input id="myInput" readonly class="myInput" onclick="myFunction()" value="<?php echo $sponsered_user['upi_address'][$i]?>"  /></td>
+                    <td><input type="text" name="pnr_no<?php echo $i;?>" placeholder="Enter Transaction No." ></td>
+                    
+                    <td><input type="text" name="pnr_amount<?php echo $i;?>" style="width:50px" readonly></td>
+                    <td><input type="file" name="pnr_holder_img_<?php echo $i;?>" /></td>
                   </tr>
                    <?php }
         
@@ -207,6 +210,23 @@ $(document).ready(function() {
 <?php $this->load->view('front/common/footer.php'); ?>
 
    <script type="text/javascript" >
+
+function myFunction() {
+  // alert("Here");
+  // Get the text field
+  var copyText = document.getElementById("myInput");
+  //var copyText = document.getElementsByClassName("myInput");
+
+  // Select the text field
+  copyText.select();
+  copyText.setSelectionRange(0, 99999); // For mobile devices
+
+   // Copy the text inside the text field
+  navigator.clipboard.writeText(copyText.value);
+
+  // Alert the copied text
+  alert("Copied " + copyText.value);
+}
       
 //var chklt = $('input[name="user_code[]"]:checked').length;
 //alert('okk');
