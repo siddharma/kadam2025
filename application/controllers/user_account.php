@@ -321,22 +321,27 @@ if (isset($_FILES['userImg']['name']) && $_FILES['userImg']['name'] != '') {
       function getUserTreeInfo($sponser_data, $loop) {
         $table_to_pass = 'mst_users';
         $condition_to_pass = array("user_sponser_id" => end($sponser_data['sponser_id']));
-        $arr_user_data = $this->common_model->getRecords($table_to_pass, 'sponser_id, full_name', $condition_to_pass, $order_by_to_pass = '', $limit_to_pass = '', $debug_to_pass = 0);
+        $arr_user_data = $this->common_model->getRecords($table_to_pass, 'sponser_id, full_name, upi_address', $condition_to_pass, $order_by_to_pass = '', $limit_to_pass = '', $debug_to_pass = 0);
        
         if (count($arr_user_data) > 0) {
             $arr_user_data = $arr_user_data[0];
             if ($loop > 0) {
                 $sponser_data['sponser_id'][] = $arr_user_data['sponser_id'];
                 $sponser_data['full_name'][] = $arr_user_data['full_name'];
+                $sponser_data['upi_address'][] = $arr_user_data['upi_address'];
                 return $this->getUserTreeInfo($sponser_data, $loop - 1);
             } else {
                 // $userData = array('sponser_id'=>$sponser_data['sponser_id'],'full_name'=>$sponser_data['full_name']);
                 $sponser_data['sponser_id'][] = $arr_user_data['sponser_id'];
                 $sponser_data['full_name'][] = $arr_user_data['full_name'];
+                $sponser_data['upi_address'][] = $arr_user_data['upi_address'];
                 return $sponser_data;
             }
         } else {
-                $userData = array('sponser_id'=>$sponser_data['sponser_id'],'full_name'=>$sponser_data['full_name']);
+                $userData = array('sponser_id'=>$sponser_data['sponser_id'],
+                'full_name'=>$sponser_data['full_name'],
+                'upi_address'=>$sponser_data['upi_address'],
+            );
                 return $userData;
         }
     }
