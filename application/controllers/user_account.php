@@ -139,7 +139,7 @@ class User_Account extends CI_Controller {
 		return $destination_url;
 	}
 
-   public function memberPNRDetails() {
+    public function memberPNRDetails() {
         $this->load->language('common');
         if (!$this->common_model->isLoggedIn()) {
             redirect('signin');
@@ -148,139 +148,101 @@ class User_Account extends CI_Controller {
         $data['user_session'] = $this->session->userdata('user_account');
 //        echo "test<pre>";print_r($_SERVER['DOCUMENT_ROOT']);echo "</pre>";die;
 //        echo $_SERVER['ROOT_PATH']; die;
-        if($this->input->post('pnr_no1')!='' && $this->input->post('pnr_no2')!='' && $this->input->post('pnr_no3')!='' && $this->input->post('pnr_no4')!='' && $this->input->post('pnr_no5')!='' && $this->input->post('pnr_no6')!='' && $this->input->post('user_code')!='' && $this->input->post('form')>0){
-//          if($this->input->post('pnr_no1')!=''){  
-            /* start : for image upload */
-            
-           echo "test<pre>";print_r($_FILES);echo "</pre>";die;
-if (isset($_FILES['userImg']['name']) && $_FILES['userImg']['name'] != '') {
-   
-    		if ($_FILES["userImg"]["error"] > 0) {
-        			$error = $_FILES["userImg"]["error"];
-                                 redirect(base_url() . 'pnrupdate');
-    		} 
-    		else if (($_FILES["userImg"]["type"] == "image/gif") || 
-			($_FILES["userImg"]["type"] == "image/jpeg") || 
-			($_FILES["userImg"]["type"] == "image/png") || 
-			($_FILES["userImg"]["type"] == "image/pjpeg")) {
-//
-////        			$url = 'destination .jpg';
-//        			$url = 'D:/wamp/www/gogreen/media/front/transaction-photo/destination .jpg';
-//
-//        			$filename = $this->compress_image($_FILES["userImg"]["tmp_name"], $url, 80);
-//        			$buffer = file_get_contents($url);
-//
-//        			/* Force download dialog... */
-//        			header("Content-Type: application/force-download");
-//        			header("Content-Type: application/octet-stream");
-//        			header("Content-Type: application/download");
-//
-//			/* Don't allow caching... */
-//        			header("Cache-Control: must-revalidate, post-check=0, pre-check=0");
-//
-//        			/* Set data type, size and filename */
-//        			header("Content-Type: application/octet-stream");
-//        			header("Content-Transfer-Encoding: binary");
-//        			header("Content-Length: " . strlen($buffer));
-//        			header("Content-Disposition: attachment; filename=$url");
-//
-//        			/* Send our file... */
-//        			echo $buffer;
-//    		}else {
-//        			$error = "Uploaded image should be jpg or gif or png";
-//    		}
-	
-//        die(okk);
-//                if (isset($_FILES['userImg']['name']) && $_FILES['userImg']['name'] != '') {
-                    //configuration
-//                    $config['upload_path'] = './media/front/transaction-photo/';
-////                    $config['allowed_types'] = 'gif/pjpeg/png/jpeg';
-//                    $config['allowed_types'] = '*';
-//                    $config['max_size'] = '9000000';
-//                    $config['max_width'] = '12024';
-//                    $config['max_height'] = '7268';
-//                    $file_name = 'gogreen_' .$data['user_account']['user_sponser_id'].'_'. rand();
-                    $rand = rand();
-//                    $url = 'D:/wamp/www/gogreen/media/front/transaction-photo/gogreen_' .$data['user_account']['user_sponser_id'].'_'. $rand.'.jpg';
-                    $url = $_SERVER['DOCUMENT_ROOT'].'/gogreen/media/front/transaction-photo/gogreen_' .$data['user_account']['user_sponser_id'].'_'. $rand.'.jpg';
-                 
-                    $filename = $this->compress_image($_FILES["userImg"]["tmp_name"], $url, 80);
-                    $image_name = 'gogreen_' .$data['user_account']['user_sponser_id'].'_'. $rand.'.jpg';
-//        			$buffer = file_get_contents($url);
-//                    $config['file_name'] = $buffer;
-//                    /* upload libraray */
-//                    $this->load->library('upload', $config);
-//                    $this->upload->initialize($config);
-//
-//                    if (!$this->upload->do_upload('userImg')) {
-//                        $error = array('error' => $this->upload->display_errors());
-//                         echo "test<pre>";print_r($error);echo "</pre>";die;
-//                        die(dsds);
-//                        redirect(base_url() . 'pnrupdate');
-//                        
-//                    } else {
-//                        $data = array('upload_data' => $this->upload->data());
-//                        $image_data = $this->upload->data();
-//                        $image_name = $image_data['file_name'];
-                        /* update image to table */
-                      
-                       
-                        $users = count($this->input->post('user_code'));
-                       
-                        $data = $this->common_model->commonFunction();
-                        //update users status
-                        if($users >0){
-                        foreach($users as $user){
-                          
-                                $update_data = array(
-                                    'form_submitted' => 'Yes',
-                                     "form_submit_date" => date('Y-m-d H:i:s'),
-                                );
-                            $table_name = 'mst_users';
-                            $condition_to_pass = array("user_sponser_id" => $user);
-                            $this->common_model->updateRow($table_name, $update_data, $condition_to_pass);
-                        }
-                        }
-                        //add form count details
-                        $fieldsa = array(
-                            'user_sponser_id'=>$data['user_account']['user_sponser_id'],
-                            'form_count'=>$this->input->post('form'),
-                        );
-                       
-                        $tablea = 'green_trans_users_form';
-                        $insert_id = $this->common_model->insertRow($fieldsa, $tablea);
-                        
-                        //add 6 users prn entries
-                        $from_users = implode("-",$this->input->post('user_code'));
-                        
-                            for($i=1;$i<=6;$i++){
+        // echo "test<pre>";print_r($_POST); print_r($_FILES); echo "</pre>";//die;
+        if($this->input->post('pnr_amount1')!='' &&  $this->input->post('form')>0) {
 
-                            $fields = array(
-                            'user_sponser_id'=>$data['user_account']['user_sponser_id'],
-                            'from_id'=>$from_users,
-                            'to_id' => mysql_real_escape_string($this->input->post('pnr_holder'.$i)),
-                            'pnr_no' => mysql_real_escape_string($this->input->post('pnr_no'.$i)),
-                            'amount' => mysql_real_escape_string($this->input->post('pnr_amount'.$i)),
-                            'transaction_date' => date("Y-m-d H:i:s"),
-                            'transaction_image' => $image_name
-                        );
-                        
-                        $table = 'trans_user_transaction';
-                        $insert_id = $this->common_model->insertRow($fields, $table);
-                        }
-                        redirect(base_url().'dashboard');
-                  
-                    }
+            // echo "Here";
+            for($i=1; $i<=12; $i++) {
+                if (empty($_FILES['pnr_holder_img_'.$i]['name'])) {
+                    continue;
                 }
+                
+                if ($_FILES["pnr_holder_img_".$i]["error"] > 0) {
+                    $error = $_FILES["pnr_holder_img_".$i]["error"];
+                    redirect(base_url() . 'pnrupdate');
+                } 
+
+                if ( !in_array($_FILES["pnr_holder_img_".$i]["type"],["image/gif","image/jpeg", "image/png", "image/pjpeg"] ) ) {
+                    $error = $_FILES["pnr_holder_img_".$i]["error"];
+                    redirect(base_url() . 'pnrupdate');
+                }
+			 
+
+                $rand = rand();
+                $image_name = 'janhit_' .$data['user_account']['user_sponser_id'].'_'.$this->input->post('pnr_holder'.$i).'_'. $rand.'.jpg';
+                $url = $_SERVER['DOCUMENT_ROOT'].'/gogreen/media/front/transaction-photo/'.$image_name;
+                $filename = $this->compress_image($_FILES["pnr_holder_img_".$i]["tmp_name"], $url, 80);
+                
+                 //add 6 users prn entries
+                 $from_users='';
+                 if(!empty($this->input->post('user_code'))) {
+                    $from_users = implode("-",$this->input->post('user_code'));
+                 }
+                
+
+                $fields = array(
+                    'user_sponser_id'=>$data['user_account']['user_sponser_id'],
+                    'from_id'=> $from_users,
+                    'to_id' => mysql_real_escape_string($this->input->post('pnr_holder'.$i)),
+                    'pnr_no' => mysql_real_escape_string($this->input->post('pnr_no'.$i)),
+                    'amount' => mysql_real_escape_string($this->input->post('pnr_amount'.$i)),
+                    'transaction_date' => date("Y-m-d H:i:s"),
+                    'transaction_image' => $image_name
+                );
+                
+                $table = 'trans_user_transaction';
+                $condition_to_pass = [ 'user_sponser_id'=>$data['user_account']['user_sponser_id'],
+                    'from_id'=> $this->input->post('form'),
+                    'to_id' => mysql_real_escape_string($this->input->post('pnr_holder'.$i))];
+                $arr_user_data = $this->common_model->getRecords($table, 'trans_id', $condition_to_pass, $order_by_to_pass = '', $limit_to_pass = '', $debug_to_pass = 0);
+
+
+                // print_r($arr_user_data);
+                
+                if(count($arr_user_data) == 0) {
+                    $this->common_model->insertRow($fields, $table);
+                } else {
+                    $this->common_model->updateRow($table, $fields, $condition_to_pass);
+                }
+                
+
+            }
+            //Loop END 
+             //update users status
+             if(!empty($this->input->post('user_code'))){
+                    $users = count($this->input->post('user_code'));
+                    foreach($users as $user) {
+                            $update_data = array(
+                                'form_submitted' => 'Yes',
+                                "form_submit_date" => date('Y-m-d H:i:s'),
+                            );
+                        $table_name = 'mst_users';
+                        $condition_to_pass = array("user_sponser_id" => $user);
+                        $this->common_model->updateRow($table_name, $update_data, $condition_to_pass);
+                    }
+                }   
+                    //add form count details
+                    $fieldsa = array(
+                        'user_sponser_id'=>$data['user_account']['user_sponser_id'],
+                        'form_count'=>$this->input->post('form'),
+                    );
+                    
+                    $tablea = 'green_trans_users_form';
+                    $this->common_model->insertRow($fieldsa, $tablea);
+                         
+                    // echo "test<pre>";print_r($_POST); print_r($_FILES); echo "</pre>";die;
+                    redirect(base_url().'dashboard');
+                  
                 /* end : for image upload */
        
         }
-        
+        // die;
        
         //Get data for direct members
       
         $arr_form_data = $this->register_model->getFormCount($table='green_trans_users_form', $data['user_account']['user_sponser_id']);
         $data['arr_form_data'] = end($arr_form_data);
+        // print_r($data['arr_form_data']);
 
         //Get data for users updated form members
         $table_to_pa = 'mst_users';
@@ -309,13 +271,7 @@ if (isset($_FILES['userImg']['name']) && $_FILES['userImg']['name'] != '') {
          $data['sponsered_user']['sponser_id'] = array_values($data['sponsered_user']['sponser_id']);
          $userDetail = array_reverse($userDetail);
          $data['sponsered_user'] = array_merge_recursive($data['sponsered_user'], $userDetail);
-        //  echo '<pre>';
-        //  print_r($data['sponsered_user']);
-        //  print_r($userDetail);
-
-        //  print_r(array_merge_recursive($data['sponsered_user'], $userDetail));
-        //   die();
-      
+         
         $this->load->view('front/pnr/pnr-details', $data);
     }
       function getUserTreeInfo($sponser_data, $loop) {
