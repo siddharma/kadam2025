@@ -17,7 +17,7 @@
                     <th>Sr. No</th>
                     <th>Date</th>
                     <th>Amount</th>
-                    <th>PNR No</th>
+                    <th>Transaction No</th>
                     <th>Donar ID</th>
                    
                   </tr>

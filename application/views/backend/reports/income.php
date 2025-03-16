@@ -126,7 +126,7 @@
                                 <th width="10%" class="workcap">From ID</th>
                                 
                                 <th width="8%" class="workcap">Amount</th>
-                                <th width="8%" class="workcap">PNR No</th>
+                                <th width="8%" class="workcap">Transaction No</th>
                                 <th width="8%" class="workcap">View</th>
                                 </thead>
                                 <tbody>

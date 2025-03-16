@@ -109,7 +109,7 @@
                                 <thead>
                                
                                 <th width="10%" class="workcap">Full Name</th>
-                                <th width="10%" class="workcap">PNR Number</th>
+                                <th width="10%" class="workcap">Transaction Number</th>
                                 <th width="5%" class="workcap">Amount</th>   
                                 <th width="15%" class="workcap">Uploaded Date</th>   
                                 <th width="50%" class="workcap">Image</th>   
