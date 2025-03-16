@@ -140,7 +140,7 @@
           </div>
              </a>
         </div>
-        <div class="col-md-6 col-lg-3">
+        <!-- <div class="col-md-6 col-lg-3">
              <a href="<?php echo base_url();?>form4">
           <div class="widget-small danger coloured-icon"><i class="icon fa fa-download fa-3x"></i>
             <div class="info">
@@ -148,7 +148,8 @@
             </div>
           </div>
              </a>
-        </div>
+        </div> -->
+
       </div>
       
     </main>
