@@ -30,7 +30,7 @@
             <div class="info">
               <h4><?php echo strtoupper($arr_user_data['full_name']); ?> (<?php echo $arr_user_data['user_sponser_id']; ?>)</h4>
               <h4>Active Date : <?php echo $arr_user_data['register_date']; ?></h4>
-              <a class="btn btn-primary" target="_blank" style="background : #FFC107" href="<?php echo base_url();?>pnrupdate">Update PNR</a>
+              <a class="btn btn-primary" target="_blank" style="background : #FFC107" href="<?php echo base_url();?>pnrupdate">Donation Update</a>
             </div>
           </div>
         </div>

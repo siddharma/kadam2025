@@ -23,7 +23,11 @@ class Register extends CI_Controller {
         $condition_to_pass = array("sponser_id" => $_POST['user_id']);
         $arr_user_data = $this->register_model->getUserInformation($table_to_pass, $fields_to_pass, $condition_to_pass, $order_by_to_pass = '', $limit_to_pass = '', $debug_to_pass = 0);
             $direct = count($arr_user_data)+1;
-            echo '<p class="input-success-cl">'.$arr_suser_data[0]['full_name'].'<br>This is my '.$direct.' direct<br><br></p>';
+            if($direct <=3) {
+            echo '<p class="input-success-cl">'.$arr_suser_data[0]['full_name'].'<br>This is my '.$direct.($direct == 1?' <sup>st</sup>':'').($direct == 2?' <sup>nd</sup>':'').($direct == 3?'<sup>rd</sup> and final':'').' direct.<br><br></p>';
+            } else {
+                echo '<p class="input-error-cl">You have already completed your all forms.<br><br></p>'; 
+            }
         }
         else{
             echo '<p class="input-error-cl">Invalid Sponsor Code</p>';
@@ -63,13 +67,20 @@ class Register extends CI_Controller {
             $fields_to_pass = array('user_id', 'user_email');
             $condition_to_pass = array("user_sponser_id" => $sponser_id);
             $arr_login_data = $this->register_model->getUserInformation($table_to_pass, $fields_to_pass, $condition_to_pass, $order_by_to_pass = '', $limit_to_pass = '', $debug_to_pass = 0);
-            if (count($arr_login_data) == 1 ) {
+           
+            $condition_to_pass = array("sponser_id" => $sponser_id);
+            $arr_user_data = $this->register_model->getUserInformation($table_to_pass, $fields_to_pass, $condition_to_pass, $order_by_to_pass = '', $limit_to_pass = '', $debug_to_pass = 0);
+            $direct = count($arr_user_data)+1;
+            // print_r($arr_login_data);
+            // die();
+            if (count($arr_login_data) == 1  && $direct <=3 ) {
                 $sponser_data['sponser_id'][]=$sponser_id;
                 $userDetail = $this->getUserInfo($sponser_data, 8);
                 $six_digit_random_number = mt_rand(100000, 999999);
                 $activation_code = time() . rand();
+                $six_digit_random_number = strtoupper('J'.$six_digit_random_number);
                 $fields = array(
-                    'user_sponser_id'=> strtoupper('J'.$six_digit_random_number),
+                    'user_sponser_id'=> $six_digit_random_number,
                     'user_password'=>'123456',
                     'sponser_id' => strtoupper($this->input->post('sponser_id')),
                     'full_name' => strtoupper($this->input->post('full_name')),
@@ -109,13 +120,14 @@ class Register extends CI_Controller {
                     'upline_fix2_donation_amt' => $data['global']['fix_level2_amt'],
                     'upline_fix3_id' => 'F100003',
                     'upline_fix3_donation_amt' => $data['global']['fix_level3_amt'],
-
+                    'form_id' => $direct,
                     'user_type' => '1',
                     'user_status' => '1',
                     'activation_code' => mysql_real_escape_string($activation_code),
                     'email_verified' => '1',
                     'register_date' => mysql_real_escape_string(date("Y-m-d H:i:s")),
                 );
+                //ALTER TABLE `green_mst_users` ADD `form_id` INT NULL DEFAULT '0' AFTER `user_id`;
                 $this->load->model('register_model');
                 $condition = '';
                 $table = 'mst_users';
@@ -123,7 +135,7 @@ class Register extends CI_Controller {
                 
                   //Log
                         $fields = array(
-                          'user_id' => 'T'.$six_digit_random_number,
+                          'user_id' => $six_digit_random_number,
                           'user_name' => $this->input->post('full_name'),
                           'login_by' => 'User',
                              'entry_for'=> 'R',
@@ -132,8 +144,10 @@ class Register extends CI_Controller {
                           $table = 'user_sign_in_log';
                           $this->common_model->insertRow($fields, $table);
                           
-                $this->session->set_userdata('message', 'You are successfully registered.');
+                $this->session->set_userdata('message', 'You are successfully registered user with id '. $six_digit_random_number);
                 redirect(base_url().'signup');
+            } else {
+                $this->session->set_userdata('message', 'Sorry for inconvinience! <br/> You have already registered 3 directs. <br/> For more help contact with administrator.');
             }
         }
         

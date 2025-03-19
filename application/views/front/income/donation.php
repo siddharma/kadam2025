@@ -5,7 +5,6 @@
         <div>
           <h1><i class="fa fa-th-list"></i> My Donation Income</h1>
         </div>
-        
       </div>
       <div class="row">
         <div class="col-md-12">
@@ -19,15 +18,13 @@
                     <th>Amount</th>
                     <th>Transaction No</th>
                     <th>Donar ID</th>
-                   
                   </tr>
                 </thead>
                 <tbody>
-                  
                     <?php $i=1;
-                    foreach ($donationAmt as $team){?>
+                    foreach ($donationAmt as $team){ ?>
                   <tr>
-                    <td><?php echo $i++;?></td>
+                    <td><?php echo $i++;?></td> 
                     <td><?php echo $team['transaction_date'];?></td>
                     <td><?php echo $team['amount'];?></td>
                     <td><?php echo $team['pnr_no'];?></td>
