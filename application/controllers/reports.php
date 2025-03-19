@@ -62,20 +62,25 @@ class Reports extends CI_Controller {
         $data['arr_user_list'] = array();
         $data['start_date'] = '';
         $data['end_date'] = '';
-        $data['user_id'] = '';
+        $data['user_id'] = ''; 
+        $data['payment_status'] = ''; 
         
-         if ($this->input->post('start_date') != '' && $this->input->post('end_date') != '') {
+         if (!empty($this->input->post('start_date')) || !empty($this->input->post('end_date')) || !empty($this->input->post('payment_status'))) {
 
-            $start_date = $this->input->post('start_date');
-            $end_date = $this->input->post('end_date');
-            $user_id = $this->input->post('user_id');
+            $start_date = (!empty($this->input->post('start_date'))?$this->input->post('start_date'):'');
+            $end_date = (!empty($this->input->post('end_date')) ?$this->input->post('end_date'):'');
+            $user_id = '';//$this->input->post('user_id');
+            $payment_status = !empty($this->input->post('payment_status'))?$this->input->post('payment_status'):'';
           
-            $data['arr_user_list'] = $this->user_model->getUserDonationIncomeReport($start_date, $end_date, $user_id);
+            // print_r($_POST);
+            // die;
+            $data['arr_user_list'] = $this->user_model->getUserDonationIncomeReport($start_date, $end_date, $user_id, $payment_status);
             $data['start_date'] = $start_date;
             $data['end_date'] = $end_date;
             $data['user_id'] = $user_id;
+            $data['payment_status'] = $payment_status;
            
-//        echo "<pre>";print_r($data['arr_user_list']);echo "</pre>";die;
+    //    echo "<pre>";print_r($data['arr_user_list']);echo "</pre>";die;
          
         }
         $this->load->view('backend/reports/income', $data);

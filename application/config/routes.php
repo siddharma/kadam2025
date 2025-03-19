@@ -74,6 +74,7 @@ $route['message-list'] = "support/listMessage";
 $route['view-message/(:any)'] = "support/viewMessage/$1";
 $route['income'] = "team_details/totalIncome";
 $route['donation'] = "team_details/totalDonation";
+$route['update-donation-status'] = "team_details/updateDpnationStatus";
 
 // User admin Report
 $route['report/userlist'] = "reports/userReport";

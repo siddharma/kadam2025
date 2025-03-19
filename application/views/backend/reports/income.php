@@ -97,11 +97,21 @@
                                     <input type="text" id="end_date" name="end_date" value="<?php echo $end_date;?>">
                                 </div>
                             </div>
-                            <div class="control-group">
+                            <!-- <div class="control-group">
                                 <label for="typeahead" class="control-label">User ID</label>
                                 <div class="controls-text">
                                     <input type="text" id="user_id" name="user_id" value="<?php echo $user_id;?>">
                                 </div>
+                            </div> -->
+                            <div class="control-group">
+                                <label for="typeahead" class="control-label">Payment status</label>
+                                <div class="controls-text">
+                                <select name="payment_status"  >
+                                    <option value="">Choose Status</option>
+                                    <option value="Yes" <?php echo ($payment_status === 'Yes'?'selected="selected"':''); ?> >Received</option>
+                                    <option value="No" <?php echo ($payment_status === 'no'?'selected="selected"':''); ?>  >Pending</option>
+                                </select>
+                            </div>
                             </div>
                             
                             <div class="form-actions">
@@ -126,7 +136,7 @@
                                 <th width="10%" class="workcap">From ID</th>
                                 
                                 <th width="8%" class="workcap">Amount</th>
-                                <th width="8%" class="workcap">Transaction No</th>
+                                <th width="8%" class="workcap">Confirm Payment</th>
                                 <th width="8%" class="workcap">View</th>
                                 </thead>
                                 <tbody>
@@ -137,10 +147,24 @@
                                             <td class="worktd"  align="left"><?php echo ($user['transaction_date'])?date($global['date_format'], strtotime($user['transaction_date'])):'-'; ?></td>
                                             <td class="worktd"  align="left"><?php echo stripslashes($user['to_id']); ?></td>
                                             <td class="worktd"  align="left"><?php echo stripslashes($user['full_name']); ?></td>
-                                            <td class="worktd"  align="left"><?php echo stripslashes($user['from_id']); ?></td>
+                                            <td class="worktd"  align="left"><?php echo stripslashes($user['user_sponser_id']); ?></td>
                                             
                                             <td class="worktd"  align="left"><?php echo ($user['amount'])?ucfirst($user['amount']):'-'; ?></td>
-                                            <td class="worktd"  align="left"><?php echo ($user['pnr_no'])?ucfirst($user['pnr_no']):'-'; ?></td>
+                                            <!-- <td class="worktd"  align="left"><?php //echo ($user['pnr_no'])?ucfirst($user['pnr_no']):'-'; ?></td> -->
+                                            <td class="worktd"  align="left">
+                                            <?php if($user['payment_status'] !== 'Yes') { ?> 
+                                                <select name="status" ref="<?php echo $user['trans_id'];?>" class="change_status">
+                                                    <option value="">Choose Status</option>
+                                                    <option value="Yes">Yes</option>
+                                                    <option value="No">No</option>
+                                                </select>
+                                            <?php }  else { echo 'Received'; }?>
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        </td>
                                             <td class="worktd"  align="left">
                                                 <a class="btn btn-primary" target="_blank" title="View Image" href="<?php echo base_url(); ?>media/front/transaction-photo/<?php echo $user['transaction_image']; ?>">
                                             <i class="icon-eye-open icon-white"></i>View</a>
@@ -161,6 +185,31 @@
             <!--[include footer]-->
         </div><!--/#content.span10-->
     </div><!--/fluid-row-->
+    <script>
+      $(document).ready(function(){
+
+            
+$(".change_status").change(function () {
+  // alert("Hello"+$(this).val()+"---"+$(this).attr('ref'));
+
+  if($(this).val()!=''){   
+    $.ajax({
+      type: 'POST',
+      url: '<?php echo base_url(); ?>update-donation-status',
+      dataType: 'text',
+      data: {
+        'payment_status' : $(this).val(),
+        'trans_id' :$(this).attr('ref')
+      },
+      success : function(result){
+        location.reload();
+        
+      }
+    });
+  }
+});
+      });
+	</script>
     <?php $this->load->view('backend/sections/footer.php'); ?>
 </div>
 </body>

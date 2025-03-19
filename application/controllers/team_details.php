@@ -155,8 +155,16 @@ class Team_Details extends CI_Controller {
                    
         $data['donationAmt'] = $this->register_model->getuserDonationReport($data['user_account']['user_sponser_id']);
         $data['totalDonation'] = $this->register_model->getuserTotalDonation($data['user_account']['user_sponser_id']);
-//       echo $data['user_account']['user_sponser_id']."<pre>";print_r($data['donationAmt']);die;
+    //   echo $data['user_account']['user_sponser_id']."<pre>";print_r($data['donationAmt']);die;
+    //ALTER TABLE `green_trans_user_transaction` ADD `payment_status` VARCHAR(25) NOT NULL DEFAULT 'no' AFTER `transaction_image`;
+
         $this->load->view('front/income/donation', $data);
+    }
+
+    public  function updateDpnationStatus() {
+        
+        $this->common_model->updateRow('green_trans_user_transaction', ['payment_status' => mysql_real_escape_string($this->input->post('payment_status'))], ['trans_id' => mysql_real_escape_string($this->input->post('trans_id'))]);
+        echo "Updated";
     }
     
 }

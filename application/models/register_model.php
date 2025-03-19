@@ -45,7 +45,7 @@ class Register_Model extends CI_Model {
     public function getuserDonationReport($user_sponser_id) {
         $this->db->select('t.*,u.full_name');
         $this->db->from('trans_user_transaction as t');
-        $this->db->join('mst_users as u', 't.to_id=u.user_sponser_id', 'left');
+        $this->db->join('mst_users as u', 't.user_sponser_id=u.user_sponser_id', 'left');
         $this->db->where('t.to_id', $user_sponser_id);
         $result = $this->db->get();
         $arr = $result->result_array();

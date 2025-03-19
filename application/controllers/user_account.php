@@ -152,7 +152,7 @@ class User_Account extends CI_Controller {
         $table = 'trans_user_transaction';
         $condition_to_pass = [ 'user_sponser_id'=>$data['user_account']['user_sponser_id'] ];
         $data['transaction_data'] = $this->common_model->getRecords($table, '*', $condition_to_pass, $order_by_to_pass = '', $limit_to_pass = '', $debug_to_pass = 0);
-        $data['image_path'] = $_SERVER['DOCUMENT_ROOT'].'/gogreen/media/front/transaction-photo/';
+        $data['image_path'] = $_SERVER['DOCUMENT_ROOT'].'/media/front/transaction-photo/';
         if($this->input->post('pnr_amount1')!='' &&  $this->input->post('form')>0) {
 
             // echo "Here";
@@ -174,7 +174,7 @@ class User_Account extends CI_Controller {
 
                 $rand = rand();
                 $image_name = 'janhit_' .$data['user_account']['user_sponser_id'].'_'.$this->input->post('pnr_holder'.$i).'_'. $rand.'.jpg';
-                $url = $_SERVER['DOCUMENT_ROOT'].'/gogreen/media/front/transaction-photo/'.$image_name;
+                $url = $_SERVER['DOCUMENT_ROOT'].'/media/front/transaction-photo/'.$image_name;
                 $filename = $this->compress_image($_FILES["pnr_holder_img_".$i]["tmp_name"], $url, 80);
                 
                  //add 6 users prn entries

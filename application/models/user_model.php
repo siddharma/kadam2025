@@ -244,19 +244,32 @@ public function getRecentUser() {
            }
            return $arr;
     }
-    public function getUserDonationIncomeReport($start_date = '', $end_date = '',$user_id = '') {
+    public function getUserDonationIncomeReport($start_date = '', $end_date = '',$user_id = '', $payment_status = '') {
 
-        $strJoinCondition = "WHERE mu.user_type='1' AND ";
+        $strJoinCondition = "WHERE mu.user_type='1' ";
          if($user_id!=''){
-           $strJoinCondition .= " t.to_id='" . $user_id . "' AND ";
+           $strJoinCondition .= " AND (t.to_id='" . $user_id . "' OR  t.to_id='" . $user_id . "')  ";
+        }
+
+        if($payment_status != '') {
+            $strJoinCondition .= " AND payment_status = '" . $payment_status."' ";
+
         }
        
-        $strJoinCondition .= "(transaction_date >= '" . $start_date . "' AND transaction_date <= '" . $end_date . "')";
+        if($start_date != '') {
+            $strJoinCondition .= " AND transaction_date >= '" . $start_date . "'";
+        }
+
+        if($end_date != '') {
+            $strJoinCondition .= " AND transaction_date <= '" . $end_date . "'";
+        }
+
+        
        
         
         $SQL_Query = "SELECT * FROM " . $this->db->dbprefix . "trans_user_transaction t "
-                . " INNER JOIN " . $this->db->dbprefix . "mst_users mu ON mu.user_sponser_id=t.to_id $strJoinCondition order by trans_id DESC";
-
+                . " INNER JOIN " . $this->db->dbprefix . "mst_users mu ON mu.user_sponser_id=t.user_sponser_id $strJoinCondition order by trans_id DESC";
+//  die;
         return $this->db->query($SQL_Query)->result_array();
     }
 
