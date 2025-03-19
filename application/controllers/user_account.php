@@ -149,6 +149,10 @@ class User_Account extends CI_Controller {
 //        echo "test<pre>";print_r($_SERVER['DOCUMENT_ROOT']);echo "</pre>";die;
 //        echo $_SERVER['ROOT_PATH']; die;
         // echo "test<pre>";print_r($_POST); print_r($_FILES); echo "</pre>";//die;
+        $table = 'trans_user_transaction';
+        $condition_to_pass = [ 'user_sponser_id'=>$data['user_account']['user_sponser_id'] ];
+        $data['transaction_data'] = $this->common_model->getRecords($table, '*', $condition_to_pass, $order_by_to_pass = '', $limit_to_pass = '', $debug_to_pass = 0);
+        $data['image_path'] = $_SERVER['DOCUMENT_ROOT'].'/gogreen/media/front/transaction-photo/';
         if($this->input->post('pnr_amount1')!='' &&  $this->input->post('form')>0) {
 
             // echo "Here";
@@ -174,10 +178,10 @@ class User_Account extends CI_Controller {
                 $filename = $this->compress_image($_FILES["pnr_holder_img_".$i]["tmp_name"], $url, 80);
                 
                  //add 6 users prn entries
-                 $from_users='';
-                 if(!empty($this->input->post('user_code'))) {
-                    $from_users = implode("-",$this->input->post('user_code'));
-                 }
+                 $from_users= $this->input->post('form');
+                //  if(!empty($this->input->post('user_code'))) {
+                //     $from_users = implode("-",$this->input->post('user_code'));
+                //  }
                 
 
                 $fields = array(
@@ -205,11 +209,10 @@ class User_Account extends CI_Controller {
                     $this->common_model->updateRow($table, $fields, $condition_to_pass);
                 }
                 
-
             }
             //Loop END 
              //update users status
-             if(!empty($this->input->post('user_code'))){
+             /*if(!empty($this->input->post('user_code'))){
                     $users = count($this->input->post('user_code'));
                     foreach($users as $user) {
                             $update_data = array(
@@ -220,7 +223,7 @@ class User_Account extends CI_Controller {
                         $condition_to_pass = array("user_sponser_id" => $user);
                         $this->common_model->updateRow($table_name, $update_data, $condition_to_pass);
                     }
-                }   
+                }   */
                     //add form count details
                     $fieldsa = array(
                         'user_sponser_id'=>$data['user_account']['user_sponser_id'],
@@ -238,6 +241,7 @@ class User_Account extends CI_Controller {
         }
         // die;
        
+        
         //Get data for direct members
       
         $arr_form_data = $this->register_model->getFormCount($table='green_trans_users_form', $data['user_account']['user_sponser_id']);
@@ -272,6 +276,8 @@ class User_Account extends CI_Controller {
          $userDetail = array_reverse($userDetail);
          $data['sponsered_user'] = array_merge_recursive($data['sponsered_user'], $userDetail);
          
+
+        //  echo "test<pre>";print_r($_POST); print_r($data); echo "</pre>";die;
         $this->load->view('front/pnr/pnr-details', $data);
     }
       function getUserTreeInfo($sponser_data, $loop) {

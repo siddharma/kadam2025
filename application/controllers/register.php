@@ -183,6 +183,7 @@ class Register extends CI_Controller {
                         $user_data['user_type'] = $arr_login_data[0]['user_type'];
                         $user_data['mobile_no'] = $arr_login_data[0]['mobile_no'];
                         $user_data['upi_address'] = $arr_login_data[0]['upi_address'];
+                        $user_data['form_id'] = $arr_login_data[0]['form_id'];
                         $this->session->set_userdata('user_account', $user_data);
                         //Log
                         $fields = array(

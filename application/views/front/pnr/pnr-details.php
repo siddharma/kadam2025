@@ -40,6 +40,8 @@ $(document).ready(function() {
 		// 	return false; 
 		// }
 	});
+
+  toggle();
 }); 
 
 </script>
@@ -57,25 +59,27 @@ $(document).ready(function() {
             <h5 style="color:red">How Many Forms You Want To Active</h5>
             <div class="">
               <div id="form">  
-            <?php switch ($arr_form_data["form_count"]) { 
+            <?php 
+            switch ($user_account["form_id"]) { 
               case 1: ?>
-                <span style="visibility:hidden;"><input type="radio" name="form" value="1"  id="frm1" onchange="toggle();" ><span class="label-text chkright" id="myspan1" style="visibility:hidden;">Form1</b></span></span>
-                <span style="visibility:visible;"><input type="radio" name="form" value="2"  id="frm2" onchange="toggle();" ><span class="label-text chkright" id="myspan2" style="visibility:visible;">Form2</span></span>
+                <span style="visibility:visible;"><input type="radio" name="form" value="1"  id="frm1" onchange="toggle();" checked="checked" ><span class="label-text chkright" id="myspan1" style="visibility:visible;">Form1</b></span></span>
+                <span style="visibility:hidden;"><input type="radio" name="form" value="2"  id="frm2" onchange="toggle();" ><span class="label-text chkright" id="myspan2" style="visibility:hidden;">Form2</span></span>
                 <span style="visibility:hidden;"><input type="radio" name="form" value="3"  id="frm3" onchange="toggle();" ><span class="label-text chkright" id="myspan3" style="visibility:hidden;">Form3</span></span>
                 <?php break;
                  case 2: ?>
                 <span style="visibility:hidden;"><input type="radio" name="form" value="1"  id="frm1" onchange="toggle();" ><span class="label-text chkright" id="myspan1" style="visibility:hidden;">Form1</b></span></span>
-                <span style="visibility:hidden;"><input type="radio" name="form" value="2"  id="frm2" onchange="toggle();" ><span class="label-text chkright" id="myspan2" style="visibility:hidden;">Form2</span></span>
-                <span style="visibility:visible;"><input type="radio" name="form" value="3"  id="frm3" onchange="toggle();" ><span class="label-text chkright" id="myspan3" style="visibility:visible;">Form3</span></span>
+                <span style="visibility:visible;"><input type="radio" name="form" value="2"  id="frm2" onchange="toggle();" checked="checked" ><span class="label-text chkright" id="myspan2" style="visibility:visible;">Form2</span></span>
+                <span style="visibility:hidden;"><input type="radio" name="form" value="3"  id="frm3" onchange="toggle();" ><span class="label-text chkright" id="myspan3" style="visibility:hidden;">Form3</span></span>
                 <?php break;case 3: ?>
-                <span style="visibility:hidden;"><input type="radio" name="form" value="1"  id="frm1" onchange="toggle();" ><span class="label-text chkright" id="myspan1" >Form1</span></span>
+                  <span style="visibility:hidden;"><input type="radio" name="form" value="1"  id="frm1" onchange="toggle();" ><span class="label-text chkright" id="myspan1" style="visibility:hidden;">Form1</b></span></span>
+                <span style="visibility:hidden;"><input type="radio" name="form" value="2"  id="frm2" onchange="toggle();" ><span class="label-text chkright" id="myspan2" style="visibility:hidden;">Form2</span></span>
+                <span style="visibility:visible;"><input type="radio" name="form" value="3"  id="frm3" onchange="toggle();" checked="checked" ><span class="label-text chkright" id="myspan3" style="visibility:visible;">Form3</span></span>
+            <?php break;
+             /*case 0: ?>
+              <span style="visibility:hidden;"><input type="radio" name="form" value="1"  id="frm1" onchange="toggle();" ><span class="label-text chkright" id="myspan1" >Form1</span></span>
                 <span style="visibility:hidden;"><input type="radio" name="form" value="2"  id="frm2" onchange="toggle();" ><span class="label-text chkright" id="myspan2" >Form2</span></span>
                 <span style="visibility:hidden;"><input type="radio" name="form" value="3"  id="frm3" onchange="toggle();" ><span class="label-text chkright" id="myspan3" >Form3</span></span>
-                <?php break;case 0: ?>
-                <span style="visibility:visible;"><input type="radio" name="form" value="1"  id="frm1" onchange="toggle();" ><span class="label-text chkright" id="myspan1" style="visibility:visible;">Form1</b></span></span>
-                <span style="visibility:hidden;"><input type="radio" name="form" value="2"  id="frm2" onchange="toggle();" ><span class="label-text chkright" id="myspan2" style="visibility:hidden;">Form2</span></span>
-                <span style="visibility:hidden;"><input type="radio" name="form" value="3"  id="frm3" onchange="toggle();" ><span class="label-text chkright" id="myspan3" style="visibility:hidden;">Form3</span></span>
-            <?php break;
+                <?php break; */
             default:
                     break;
             } ?>
@@ -86,11 +90,11 @@ $(document).ready(function() {
           </div>
             <div>
            
-            <?php foreach ($unactive_user as $inactive) { ?>
+            <?php /* foreach ($unactive_user as $inactive) { ?>
               <span id="User_usr_code" class="chkright "><input class="clikcnt" id="usr_code_<?php echo $inactive["user_sponser_id"]; ?>" value="<?php echo $inactive["user_sponser_id"]; ?>" type="checkbox" name="user_code[]" onclick="updateCount()"/>
                   <label for="User_usr_code_0"><?php echo $inactive["user_sponser_id"]; ?></label>
               </span> 
-            <?php } ?>
+            <?php } */ ?>
             
           </div>
         </div>
@@ -109,16 +113,27 @@ $(document).ready(function() {
                 <tbody>
                     <?php for ($i = 12; $i >= 1; $i--) { ?>
                         <tr>
-                    <td>
-                        <?php echo $sponsered_user["sponser_id"][$i]; ?>
+                    <td >
+                        <?php //echo $sponsered_user["sponser_id"][$i]; ?>
                         <input type="hidden" name="pnr_holder<?php echo $i; ?>" value="<?php echo $sponsered_user["sponser_id"][$i]; ?>">
-                            <!-- <lable><b><?php echo "[ " . $sponsered_user["full_name"][$i] ." ]"; ?></b></lable> -->
+                            <lable style="width:100px"><?php echo "" . $sponsered_user["full_name"][$i] .""; ?></lable>
                     </td>
                     <td><input id="myInput_<?php echo $i; ?>" readonly class="myInput" onclick="myFunction(<?php echo $i; ?>)" value="<?php echo $sponsered_user["upi_address"][$i]; ?>"  /></td>
-                    <td><input type="text" name="pnr_no<?php echo $i; ?>" placeholder="Enter Transaction No." ></td>
-                    
+                    <!-- <td><input type="hidden" name="pnr_no<?php echo $i; ?>" placeholder="Enter Transaction No." ></td> -->
+                    <input type="hidden" name="pnr_no<?php echo $i; ?>" placeholder="Enter Transaction No." >
                     <td><input type="text" name="pnr_amount<?php echo $i; ?>" style="width:50px" readonly></td>
-                    <td><input type="file" name="pnr_holder_img_<?php echo $i; ?>" /></td>
+                    <td>
+                    <?php if($arr_form_data['form_count'] <= 0) {?>
+                    <input type="file" name="pnr_holder_img_<?php echo $i; ?>" />
+                    <?php } else { 
+                      foreach($transaction_data as $transaction) {  
+                        if($transaction['to_id'] !== $sponsered_user["sponser_id"][$i]) {
+                          continue;
+                        }
+                      ?>
+                      <a href="<?php echo base_url().'media/front/transaction-photo/'.$transaction['transaction_image'];?>" target="_blank"><img src="<?php echo base_url().'media/front/transaction-photo/'.$transaction['transaction_image'];?>" width="30" /></a> 
+                    <?php }}?>
+                  </td>
                   </tr>
                    <?php } ?>
           
@@ -153,8 +168,11 @@ $(document).ready(function() {
             <div class="tile-footer">
               <div class="row">
                 <div class="col-md-8 col-md-offset-3">
+                  <?php if($arr_form_data['form_count'] <= 0) {?>
                     <input type="submit" class="btn btn-primary" id="btnpnr" name="btnpnr" value="Submit">
-                </div>
+                <?php } ?>
+
+                  </div>
               </div>
             </div>
             </div>
