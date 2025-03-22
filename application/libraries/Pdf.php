@@ -15,7 +15,13 @@ class Pdf extends TCPDF
         // disable auto-page-break
         $this->SetAutoPageBreak(false, 0);
         // set bacground image
-        $this->Image("http://localhost/gogreen/media/front/images/bg-1.png", 0, 0, 210, 297, '', '', '', false, 300, '', false, false, 0);;
+        // print_r(__FILE__."/../../media/front/images/bg-1.png");
+        // die();
+        // directory
+        // $file_path = dirname(__FILE__).DIRECTORY_SEPARATOR ."..".DIRECTORY_SEPARATOR ."..".DIRECTORY_SEPARATOR ."media".DIRECTORY_SEPARATOR ."front".DIRECTORY_SEPARATOR ."images".DIRECTORY_SEPARATOR ."bg-1.png";
+
+        $this->Image(base_url()."media/front/images/bg-1.png", 0, 0, 210, 297, '', '', '', false, 300, '', false, false, 0);;
+        // $this->Image($file_path, 0, 0, 210, 297, '', '', '', false, 300, '', false, false, 0);;
 //        $img_file = K_PATH_IMAGES.'image_demo.jpg';
 //        $this->Image($img_file, 0, 0, 210, 297, '', '', '', false, 300, '', false, false, 0);
         // restore auto-page-break status
