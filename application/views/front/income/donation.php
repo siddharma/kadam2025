@@ -60,6 +60,7 @@ $(".change_status").change(function () {
                 </thead>
                 <tbody>
                     <?php $i=1;
+                    $totalReceivedAmount = 0;
                     foreach ($donationAmt as $team){ ?>
                   <tr>
                     <td><?php echo $i++;?></td> 
@@ -75,13 +76,15 @@ $(".change_status").change(function () {
                           <option value="Yes">Yes</option>
                           <option value="No">No</option>
                       </select>
-                   <?php }  else { echo 'Received'; }?>
+                   <?php }  else { $totalReceivedAmount+=$team['amount'];
+                    echo 'Received'; }?>
                   </td>
                   </tr>
                     <?php }?>
                   
                 </tbody>
               </table>
+              <h5>Total Received Amount is <?php echo $totalReceivedAmount; ?></h5>
             </div>
           </div>
         </div>
