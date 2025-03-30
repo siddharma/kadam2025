@@ -142,7 +142,7 @@
                                         <?php echo ucfirst($reply['createddate']); ?>
                                         <br></p>
                                     
-                                    <?php
+                                    <?php /*
                                     if (count($reply['photos']) > 0) {
                                         foreach ($reply['photos'] as $photo) {
                                             ?><a href="<?php echo base_url(); ?>media/front/user-photos/<?php echo $photo['photo_path']; ?>" target='_blank'>
@@ -150,7 +150,7 @@
 
                                             <?php
                                         }
-                                    }
+                                    } */
                                     ?>
                                     <div style="clear: both;"></div>
                                 </div>

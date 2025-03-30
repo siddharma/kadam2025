@@ -414,11 +414,11 @@ class Support extends CI_Controller {
         $data['arr_forum_detail'] = $this->user_model->getUserForumDetailsById(base64_decode($ims_id));
         /* single row fix */
         $data['arr_forum_detail'] = end($data['arr_forum_detail']);
-        $data['forum_photo'] = $this->user_model->getPhotoDetailsById(base64_decode($ims_id), $data['arr_forum_detail']['user_id']);
+        //$data['forum_photo'] = $this->user_model->getPhotoDetailsById(base64_decode($ims_id), $data['arr_forum_detail']['user_id']);
         $data['arrReplyDetails'] = $this->user_model->getUserForumReplyDetailsById(base64_decode($ims_id));
         $data['arrReplydateDetails'] = $this->user_model->getUserForumReplydateDetailsById(base64_decode($ims_id));
         foreach ($data['arrReplyDetails'] as $key => $reply) {
-            $data['arrReplyDetails'][$key]['photos'] = $this->user_model->getPhotoDetailsById($reply['ims_id'], $reply['user_id']);
+            //$data['arrReplyDetails'][$key]['photos'] = $this->user_model->getPhotoDetailsById($reply['ims_id'], $reply['user_id']);
         }
         $data['title'] = "View details";
         $this->load->view('backend/support/view', $data);

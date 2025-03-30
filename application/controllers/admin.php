@@ -360,7 +360,9 @@ class Admin extends CI_Controller {
                     'user_type' => 2,
                     'activation_code' => $activation_code,
                     'role_id' => $this->input->post('role_id'),
-                    'register_date' => date("Y-m-d H:i:s")
+                    'register_date' => date("Y-m-d H:i:s"),
+                    "email_verified" => 1,
+                    "user_status" => 1,
                 );
                 /* inserting admin details into the dabase */
                 $last_insert_id = $this->common_model->insertRow($arr_to_insert, "mst_users");
@@ -397,7 +399,7 @@ class Admin extends CI_Controller {
                 $from = array("email" => $data['global']['site_email'], "name" => $data['global']['site_title']);
                 $subject = $arr_emailtemplate_data['subject'];
                 $message = stripcslashes($arr_emailtemplate_data['content']);
-                $mail = $this->common_model->sendEmail($recipeinets, $from, $subject, $message);
+               // $mail = $this->common_model->sendEmail($recipeinets, $from, $subject, $message);
 
                 if ($mail) {
                     $this->session->set_userdata("msg", "<span class='success'>Admin added successfully!! Verification email has been sent to <strong>" . $this->input->post('user_email') . "</strong></span>");
@@ -467,7 +469,7 @@ class Admin extends CI_Controller {
                     $activation_code = $arr_admin_detail['activation_code'];
                 } else {
                     $status = 0;
-                    $email_verified = 0;
+                    $email_verified = 1;
                     $activation_code = time();
                 }
                 if ($this->input->post('change_password') == 'on') {
@@ -478,6 +480,8 @@ class Admin extends CI_Controller {
                         "user_name" => mysql_real_escape_string($this->input->post('user_name')),
                         "user_email" => mysql_real_escape_string($this->input->post('user_email')),
                         "user_password" => ($this->input->post('user_password')),
+                        "email_verified" => $email_verified,
+                        "user_status" => $status,
                         'role_id' => $this->input->post('role_id'),
                     );
                 } else {
@@ -486,7 +490,9 @@ class Admin extends CI_Controller {
                     $arr_to_update = array(
                         "user_name" => mysql_real_escape_string($this->input->post('user_name')),
                         "user_email" => mysql_real_escape_string($this->input->post('user_email')),
-                        'role_id' => $this->input->post('role_id')
+                        'role_id' => $this->input->post('role_id'),
+                        "email_verified" => $email_verified,
+                        "user_status" => $status
                     );
                 }
 
