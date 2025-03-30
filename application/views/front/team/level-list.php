@@ -71,15 +71,16 @@
                     <div style="margin-top:60px;">
                         <div class="gogreencls" style="margin-left: 474px;margin-bottom: 15px;" onmouseout="$('.mypopup').hide();"
                         onmousemove="getmsg('<?php echo $sponser_user['user_sponser_id'];?>', '<?php echo $sponser_user['register_date'];?>','<?php echo $sponser_user['activate_date'];?>', '<?php echo $sponser_user['full_name'];?>','<?php echo $sponser_user['sponser_id'];?>')">
-                         <a href="<?php echo base_url();?>level/<?php echo $sponser_user['user_sponser_id'];?>">
+                        <a href="<?php echo base_url();?>level/<?php echo $sponser_user['user_sponser_id'];?>">
                         <img src="<?php echo base_url(); ?>media/front/images/active.png" style="width:40px; height:40px;  border:0px solid #CCCCCC;"><br>
                         <?php echo $sponser_user['user_sponser_id'];?></a>
                         </div>
                        
                     </div>
                   
-                    <div style="width:1020px;"><img src="<?php echo base_url(); ?>media/front/images/line.png" style="margin-left:-7px;"><br><br></div>
-                    <div class="clear"></div><div style="width:1075px;">
+                    <div style="margin-left:42%; width: 300px;"><img src="<?php echo base_url(); ?>media/front/images/line.png" style="margin-left:-7px;"><br><br></div>
+                    <div class="clear"></div>
+                    <div style="margin-left:42%; width: 300px;">
                         <table border="0">
                             <tbody>
                                 <tr>
@@ -92,8 +93,8 @@
                                     <td style="width:104px">
                                         <div class="gogreencls"  onmouseout="$('.mypopup').hide();"
                                              onmousemove="getmsg('<?php echo $team['user_sponser_id'];?>', '<?php echo $team['register_date'];?>','<?php echo $team['activate_date'];?>', '<?php echo $team['full_name'];?>','<?php echo $team['sponser_id'];?>');">
-                                            <?php if($team['is_active']=='No'){?>
-                                            <a href="#">
+                                            <?php if(strtolower($team['is_active'])=='no'){?>
+                                                <a href="<?php echo base_url();?>level/<?php echo $team['user_sponser_id'];?>"> 
                                                 <img src="<?php echo base_url(); ?>media/front/images/inactive.png" style="width:40px; height:40px; border:0px solid #CCCCCC;"><br>
                                                 <?php echo $team['user_sponser_id'];?></a>
                                             <?php }else{?>
@@ -104,8 +105,8 @@
                                         </div>
                                     </td>
                                    
-                                        <?php } if($imgcnt<10){ 
-                                       for($i=$imgcnt; $i<=9; $i++){?>
+                                        <?php } if($imgcnt<3){ 
+                                       for($i=$imgcnt; $i<=2; $i++){?>
                                      <td>
                                         <div style="width:104px;"><div class="gogreencls" >
                                                 <img src="<?php echo base_url(); ?>media/front/images/vacant.png" style="width:40px; height:40px; border:0px solid #CCCCCC;">
@@ -113,7 +114,7 @@
                                         </div>
                                     </td>
                                        <?php } }  }else{ 
-                                           for($i=0; $i<=9; $i++){?>
+                                           for($i=0; $i<=2; $i++){?>
                                     <td>
                                         <div style="width:104px;"><div class="gogreencls" >
                                                 <img src="<?php echo base_url(); ?>media/front/images/vacant.png" style="width:40px; height:40px; border:0px solid #CCCCCC;">
