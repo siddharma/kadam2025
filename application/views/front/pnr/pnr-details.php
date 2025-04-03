@@ -116,7 +116,7 @@ $(document).ready(function() {
                     <td >
                         <?php //echo $sponsered_user["sponser_id"][$i]; ?>
                         <input type="hidden" name="pnr_holder<?php echo $i; ?>" value="<?php echo $sponsered_user["sponser_id"][$i]; ?>">
-                            <lable style="width:100px"><?php echo "" . $sponsered_user["full_name"][$i] ." <br/>". $sponsered_user["mobile_no"][$i] ; ?></lable>
+                            <lable style="width:100px"><?php echo "" . $sponsered_user["full_name"][$i] ; ?></lable>
                     </td>
                     <td><input id="myInput_<?php echo $i; ?>" readonly class="myInput" onclick="myFunction(<?php echo $i; ?>)" value="<?php echo $sponsered_user["upi_address"][$i]; ?>"  /></td>
                     <!-- <td><input type="hidden" name="pnr_no<?php echo $i; ?>" placeholder="Enter Transaction No." ></td> -->

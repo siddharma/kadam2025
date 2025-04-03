@@ -71,7 +71,7 @@
 
         <div class="carousel-inner">
           <div class="item active">
-            <img src="<?php echo base_url();?>media/front/gogreen-template/img/1.jpg" class="img-responsive" alt="">
+            <img src="<?php echo base_url();?>media/front/gogreen-template/img/1.jpeg" class="img-responsive" alt="">
             <div class="carousel-caption">
               <div class="wow fadeInUp" data-wow-offset="0" data-wow-delay="0.3s">
                 <h2><span>OUR MISSION</span></h2>
@@ -88,7 +88,7 @@
           </div>
 
           <div class="item">
-            <img src="<?php echo base_url();?>media/front/gogreen-template/img/2.jpg" class="img-responsive" alt="">
+            <img src="<?php echo base_url();?>media/front/gogreen-template/img/2.jpeg" class="img-responsive" alt="">
             <div class="carousel-caption">
               <div class="wow fadeInUp" data-wow-offset="0" data-wow-delay="1.0s">
                 <h2>TREE PLANTATION</h2>
@@ -105,7 +105,7 @@
           </div>
 
           <div class="item">
-            <img src="<?php echo base_url();?>media/front/gogreen-template/img/3.jpg" class="img-responsive" alt="">
+            <img src="<?php echo base_url();?>media/front/gogreen-template/img/3.jpeg" class="img-responsive" alt="">
             <div class="carousel-caption">
               <div class="wow fadeInUp" data-wow-offset="0" data-wow-delay="1.0s">
                 <h2>SAVE EARTH</h2>

@@ -142,7 +142,16 @@
 					</div>
                                 
 					<div class="wrap-input2 validate-input">
-						<input class="input2" type="text" name="nominee_relation">
+						<!-- <input class="input2" type="text" name="nominee_relation"> -->
+						 <select name="nominee_relation" class="input2" >
+							<option></option>
+							<option value="SON">SON</option>
+							<option value="DAUGHTER">DAUGHTER</option>
+							<option value="FATHER">FATHER</option>
+							<option value="MOTHER">MOTHER</option>
+							<option value="WIFE">WIFE</option>
+							<option value="HUSBAND">HUSBAND</option>
+						 </select>
 						<span class="focus-input2" data-placeholder="Nominee Relation"></span>
 					</div>
                                 You accept all <a href="<?php echo base_url(); ?>application/views/front/registration/gogreenrules.pdf" target="_blank">Terms & Conditions</a> clicking on submit button.
