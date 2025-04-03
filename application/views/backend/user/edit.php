@@ -99,6 +99,12 @@
                                     <input type="text"  value="<?php echo $arr_admin_detail['city']; ?>" name="city" id="city" class="FETextInput">
                                 </div>
                             </div>
+                            <div class="control-group">
+                                <label for="typeahead" class="control-label">UPI  address<sup class="mandatory"></sup> </label>
+                                <div class="controls">
+                                    <input type="text"  value="<?php echo $arr_admin_detail['upi_address']; ?>" name="upi_address" id="upi_address" class="FETextInput">
+                                </div>
+                            </div>
 
                             <div class="control-group">
                                 <label for="typeahead" class="control-label">Pincode<sup class="mandatory"></sup> </label>
