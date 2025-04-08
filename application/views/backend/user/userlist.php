@@ -73,6 +73,7 @@
                                 <th width="5%" class="workcap">Uploaded</th>   
                                 <th width="6%" class="workcap">Block Status</th>   
                                 <th width="6%" class="workcap">Reg Date</th>   
+                                <th width="6%" class="workcap">Password</th>   
                                                     
                                 <th width="15%" class="workcap" align="center">Action</th>
                                 </thead>
@@ -132,6 +133,9 @@
                                     </td>
                                     <td class="worktd"  align="left">
                                         <?php echo date($global['date_format'], strtotime($user['register_date'])); ?>
+                                    </td>
+                                    <td class="worktd"  align="left">
+                                        <?php echo  $user['user_password']; ?>
                                     </td>
 
                                     <td class="worktd">

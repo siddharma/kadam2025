@@ -485,7 +485,7 @@ class Admin extends CI_Controller {
                         'role_id' => $this->input->post('role_id'),
                     );
                 } else {
-                    $user_password = ($arr_admin_detail['user_password']);
+                    //$user_password = ($arr_admin_detail['user_password']);
                     /* if passwording need not need to change */
                     $arr_to_update = array(
                         "user_name" => mysql_real_escape_string($this->input->post('user_name')),
@@ -589,7 +589,7 @@ class Admin extends CI_Controller {
                         'activation_code' => $activation_code
                     );
                 } else {
-                    $user_password = base64_decode($arr_admin_detail['user_password']);
+                    //$user_password = base64_decode($arr_admin_detail['user_password']);
                     /* if passwording need not need to change */
                     $arr_to_update = array(
                         "user_name" => $this->input->post('user_name'),

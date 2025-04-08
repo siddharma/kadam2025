@@ -108,15 +108,15 @@ class User_Pdf extends CI_Controller {
 
                                         <strong> Dear Sir/Madam,</strong><br> <br>
 
-                                        We Congratulate you for being the part of <strong>JANHIT.</strong> We wholeheartedly welcome you. We really appreciate your decision of choosing the best system which will make you economically independent. We have launched a totally different concept which will make you feel everything different than old traditional System. We have provided you a golden opportunity to prove yourself and carry out all your caliber .
+                                        We Congratulate you for being the part of <strong>Janhit Charitable Trust.</strong> We wholeheartedly welcome you. We really appreciate your decision of choosing the best system which will make you economically independent. We have launched a totally different concept which will make you feel everything different than old traditional System. We have provided you a golden opportunity to prove yourself and carry out all your caliber .
                                         <br> <br>
-                                        OUR concept is genuine System in which you have to enrol persons who are really interested and voluntarily offer them to be the part of this group just like you and develop a strong system which will keep you at very high prominent place and apex of success. All the staff members are always ready to assist you all the time. Please do feel free to share your new thoughts and ideas. For latest information and updates keep surfing at <strong> www.gogreensavetree.in </strong> and forward your suggestion by mailing us to <strong> gogreensavetree52@gmail.com </strong> Your suggestions are very precious to us.   <br> <br>
+                                        OUR concept is genuine System in which you have to enrol persons who are really interested and voluntarily offer them to be the part of this group just like you and develop a strong system which will keep you at very high prominent place and apex of success. All the staff members are always ready to assist you all the time. Please do feel free to share your new thoughts and ideas. For latest information and updates keep surfing at <strong> www.janhitcharitable.com </strong> and forward your suggestion by mailing us to <strong> janhitctrustkop@gmail.com </strong> Your suggestions are very precious to us.   <br> <br>
 
-                                        We once again congratulate and welcome you to the world of <strong> JANHIT </strong>  System and thank you for giving us an opportunity to serve you.   <br> <br>
+                                        We once again congratulate and welcome you to the world of <strong> Janhit Charitable Trust </strong>  System and thank you for giving us an opportunity to serve you.   <br> <br>
 
                                         Yours Sincerely,   <br> <br>
 
-                                        <strong> JANHIT </strong> Team  <br> <br>
+                                        <strong> Janhit Charitable Trust </strong> Team  <br> <br>
 
                                         <br> 
                                         <strong> Managing Director </strong>
@@ -256,14 +256,14 @@ ADD `upi_address` VARCHAR(100) NOT NULL  AFTER `mobile_no`;
 
 
             <tr style=" border: 1px solid black;border-collapse: collapse;">
-                <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; margin-top:25px;width:10%"><strong>Fix </strong></td>
+                <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; margin-top:25px;width:10%"><strong>12 </strong></td>
                 <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:35%">'.ucfirst($userFixDetail['full_name'][2]).'</td>
                 <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; width:20%">'.($userFixDetail['mobile_no'][2]).'</td>
                 <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:25%">'.($userFixDetail['upi_address'][2]).'</td>
                 <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:10%">'.$data['global']['fix_level3_amt'].'</td>
             </tr>
             <tr style=" border: 1px solid black;border-collapse: collapse;">
-                <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; margin-top:25px;width:10%"><strong>Fix </strong></td>
+                <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; margin-top:25px;width:10%"><strong>11 </strong></td>
                 <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:35%">'.ucfirst($userFixDetail['full_name'][1]).'</td>
                 <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; width:20%">'.($userFixDetail['mobile_no'][1]).'</td>
                 <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:25%">'.($userFixDetail['upi_address'][1]).'</td>
@@ -272,7 +272,7 @@ ADD `upi_address` VARCHAR(100) NOT NULL  AFTER `mobile_no`;
 
 
             <tr style=" border: 1px solid black;border-collapse: collapse;">
-                <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; margin-top:25px;width:10%"><strong>Fix </strong></td>
+                <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; margin-top:25px;width:10%"><strong>10 </strong></td>
                 <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:35%">'.ucfirst($userFixDetail['full_name'][0]).'</td>
                 <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; width:20%">'.($userFixDetail['mobile_no'][0]).'</td>
                 <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:25%">'.($userFixDetail['upi_address'][0]).'</td>
@@ -470,14 +470,14 @@ $obj_pdf->Output('Form1.pdf', 'D');
 
 
         <tr style=" border: 1px solid black;border-collapse: collapse;">
-            <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; margin-top:25px;width:10%"><strong>Fix </strong></td>
+            <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; margin-top:25px;width:10%"><strong>12 </strong></td>
             <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:35%">'.ucfirst($userFixDetail['full_name'][2]).'</td>
             <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; width:20%">'.($userFixDetail['mobile_no'][2]).'</td>
             <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:25%">'.($userFixDetail['upi_address'][2]).'</td>
             <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:10%">'.$data['global']['fix_level3_amt'].'</td>
         </tr>
         <tr style=" border: 1px solid black;border-collapse: collapse;">
-            <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; margin-top:25px;width:10%"><strong>Fix </strong></td>
+            <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; margin-top:25px;width:10%"><strong>11 </strong></td>
             <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:35%">'.ucfirst($userFixDetail['full_name'][1]).'</td>
             <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; width:20%">'.($userFixDetail['mobile_no'][1]).'</td>
             <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:25%">'.($userFixDetail['upi_address'][1]).'</td>
@@ -486,7 +486,7 @@ $obj_pdf->Output('Form1.pdf', 'D');
 
 
         <tr style=" border: 1px solid black;border-collapse: collapse;">
-            <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; margin-top:25px;width:10%"><strong>Fix </strong></td>
+            <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; margin-top:25px;width:10%"><strong>10 </strong></td>
             <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:35%">'.ucfirst($userFixDetail['full_name'][0]).'</td>
             <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; width:20%">'.($userFixDetail['mobile_no'][0]).'</td>
             <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:25%">'.($userFixDetail['upi_address'][0]).'</td>
@@ -682,14 +682,14 @@ public function form3PDF(){
 
 
       <tr style=" border: 1px solid black;border-collapse: collapse;">
-          <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; margin-top:25px;width:10%"><strong>Fix </strong></td>
+          <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; margin-top:25px;width:10%"><strong>4 </strong></td>
           <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:35%">'.ucfirst($userFixDetail['full_name'][2]).'</td>
           <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; width:20%">'.($userFixDetail['mobile_no'][2]).'</td>
           <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:25%">'.($userFixDetail['upi_address'][2]).'</td>
           <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:10%">'.$data['global']['fix_level3_amt'].'</td>
       </tr>
       <tr style=" border: 1px solid black;border-collapse: collapse;">
-          <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; margin-top:25px;width:10%"><strong>Fix </strong></td>
+          <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; margin-top:25px;width:10%"><strong>3 </strong></td>
           <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:35%">'.ucfirst($userFixDetail['full_name'][1]).'</td>
           <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; width:20%">'.($userFixDetail['mobile_no'][1]).'</td>
           <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:25%">'.($userFixDetail['upi_address'][1]).'</td>
@@ -698,7 +698,7 @@ public function form3PDF(){
 
 
       <tr style=" border: 1px solid black;border-collapse: collapse;">
-          <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; margin-top:25px;width:10%"><strong>Fix </strong></td>
+          <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; margin-top:25px;width:10%"><strong>2 </strong></td>
           <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:35%">'.ucfirst($userFixDetail['full_name'][0]).'</td>
           <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; width:20%">'.($userFixDetail['mobile_no'][0]).'</td>
           <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:25%">'.($userFixDetail['upi_address'][0]).'</td>

@@ -121,7 +121,7 @@ class User extends CI_Controller {
                 /* updating the user status. */
 
                 $arr_to_update = array(
-                    "user_password" => $six_digit_random_number,
+                    //"user_password" => $six_digit_random_number,
                     "activate_date" => date('Y-m-d H:i:s'),
                 );
               $condition_array = array('user_id' => intval($this->input->post('user_id')));
@@ -237,7 +237,7 @@ class User extends CI_Controller {
                 $arr_to_insert = array(
                     "user_name" => mysql_real_escape_string($this->input->post('user_name')),
                     "user_email" => mysql_real_escape_string($this->input->post('user_email')),
-                    "user_password" => ($this->input->post('user_password')),
+                    //"user_password" => ($this->input->post('user_password')),
                     'user_type' => 1,
                     'user_status' => 1,
                     'activation_code' => $activation_code,
@@ -379,7 +379,7 @@ class User extends CI_Controller {
                        
                     );
                 } else {
-                    $user_password = ($arr_admin_detail['user_password']);
+                    //$user_password = ($arr_admin_detail['user_password']);
                     /* if passwording need not need to change */
  
                     $arr_to_update = array(

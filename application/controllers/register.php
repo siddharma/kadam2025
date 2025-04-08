@@ -122,7 +122,7 @@ class Register extends CI_Controller {
                     'upline_fix3_donation_amt' => $data['global']['fix_level3_amt'],
                     'form_id' => $direct,
                     'user_type' => '1',
-                    'user_status' => '1',
+                    'user_status' => 0,
                     'activation_code' => mysql_real_escape_string($activation_code),
                     'email_verified' => '1',
                     'register_date' => mysql_real_escape_string(date("Y-m-d H:i:s")),

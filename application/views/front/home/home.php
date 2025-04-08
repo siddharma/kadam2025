@@ -10,7 +10,7 @@
   <!-- BASICS -->
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>JANHIT</title>
+  <title>Janhit Charitable Trust</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>media/front/gogreen-template/css/isotope.css" media="screen" />
@@ -38,7 +38,7 @@
   <div class="header">
     <section id="header" class="appear">
 
-      <div class="navbar navbar-fixed-top" role="navigation" data-0="line-height:100px; height:100px; background-color:rgba(0,0,0,0.3);" data-300="line-height:60px; height:60px; background-color:rgba(0,0,0,1);">
+      <div class="navbar navbar-fixed-top" role="navigation" data-0="line-height:100px; height:100px; background-color:#cccc;" data-300="line-height:60px; height:60px; background-color:rgba(0,0,0,1);">
 
           <div class="navbar-header" style="margin-left:15px;">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -78,7 +78,7 @@
               </div>
               <div class="col-md-10 col-md-offset-1">
                 <div class="wow fadeInUp" data-wow-offset="0" data-wow-delay="0.6s">
-                  <p>Plant a Tree, Grow a Tree, Save Future, Save Earth</p>
+                  <p>Janhit Charitable Trust</p>
                 </div>
               </div>
               <div class="wow fadeInUp" data-wow-offset="0" data-wow-delay="0.9s">
@@ -91,11 +91,11 @@
             <img src="<?php echo base_url();?>media/front/gogreen-template/img/2.jpeg" class="img-responsive" alt="">
             <div class="carousel-caption">
               <div class="wow fadeInUp" data-wow-offset="0" data-wow-delay="1.0s">
-                <h2>TREE PLANTATION</h2>
+                <h2>Janhit Charitable Trust</h2>
               </div>
               <div class="col-md-10 col-md-offset-1">
                 <div class="wow fadeInUp" data-wow-offset="0" data-wow-delay="0.6s">
-                  <p>Save Trees, Save Environment</p>
+                  <p>Aaply kutumbachi jababdari</p>
                 </div>
               </div>
               <div class="wow fadeInUp" data-wow-offset="0" data-wow-delay="1.6s">
@@ -108,11 +108,11 @@
             <img src="<?php echo base_url();?>media/front/gogreen-template/img/3.jpeg" class="img-responsive" alt="">
             <div class="carousel-caption">
               <div class="wow fadeInUp" data-wow-offset="0" data-wow-delay="1.0s">
-                <h2>SAVE EARTH</h2>
+                <h2>Janhit Charitable Trust</h2>
               </div>
               <div class="col-md-10 col-md-offset-1">
                 <div class="wow fadeInUp" data-wow-offset="0" data-wow-delay="0.6s">
-                  <p>Save Trees, Save Environment</p>
+                  <p>Aaply kutumbachi jababdari</p>
                 </div>
               </div>
               <div class="wow fadeInUp" data-wow-offset="0" data-wow-delay="1.6s">
@@ -227,7 +227,7 @@ We get the oxygen of crores in free of costs from trees, still we cut them. Thin
 
       <div class="row align-center copyright">
         <div class="col-sm-12">
-          <p>&copy; GO GREEN SAVE GREEN</p>
+          <p>&copy; Janhit Charitable Trust</p>
           
         </div>
       </div>

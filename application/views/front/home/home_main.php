@@ -10,7 +10,7 @@
   <!-- BASICS -->
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>JANHIT</title>
+  <title>Janhit Charitable Trust</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>media/front/gogreen-template/css/isotope.css" media="screen" />
@@ -44,7 +44,7 @@
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
 						<span class="fa fa-bars color-white"></span>
 					</button>
-          <h1><a class="navbar-brand" href="<?php echo base_url();?>media/front/gogreen-template/index.html" data-0="line-height:90px;" data-300="line-height:50px;">JANHIT
+          <h1><a class="navbar-brand" href="<?php echo base_url();?>media/front/gogreen-template/index.html" data-0="line-height:90px;" data-300="line-height:50px;">Janhit Charitable Trust
 					</a></h1>
         </div>
         <div class="navbar-collapse collapse">
@@ -81,7 +81,7 @@
             <img src="<?php echo base_url();?>media/front/gogreen-template/img/1.jpg" class="img-responsive" alt="">
             <div class="carousel-caption">
               <div class="wow fadeInUp" data-wow-offset="0" data-wow-delay="0.3s">
-                <h2><span>JANHIT</span></h2>
+                <h2><span>Janhit Charitable Trust</span></h2>
               </div>
             </div>
           </div>
@@ -90,7 +90,7 @@
             <img src="<?php echo base_url();?>media/front/gogreen-template/img/2.jpg" class="img-responsive" alt="">
             <div class="carousel-caption">
               <div class="wow fadeInUp" data-wow-offset="0" data-wow-delay="1.0s">
-                <h2>JANHIT</h2>
+                <h2>Janhit Charitable Trust</h2>
               </div>
             </div>
           </div>
@@ -99,7 +99,7 @@
             <img src="<?php echo base_url();?>media/front/gogreen-template/img/3.jpg" class="img-responsive" alt="">
             <div class="carousel-caption">
               <div class="wow fadeInUp" data-wow-offset="0" data-wow-delay="1.0s">
-                <h2>JANHIT</h2>
+                <h2>Janhit Charitable Trust</h2>
               </div>
             </div>
           </div>
@@ -695,7 +695,7 @@
 
       <div class="row align-center copyright">
         <div class="col-sm-12">
-          <p>&copy; JANHIT</p>
+          <p>&copy; Janhit Charitable Trust</p>
           <div class="credits">
             <!--
               All the links in the footer should remain intact.
@@ -703,7 +703,7 @@
               Licensing information: https://bootstrapmade.com/license/
               Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Green
             -->
-            Designed by <a href="https://gogreensavetree.com/">JANHIT</a>
+            Designed by <a href="https://www.janhitcharitable.com/">Janhit Charitable Trust</a>
           </div>
          </div>
       </div>

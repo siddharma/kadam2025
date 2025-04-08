@@ -37,15 +37,15 @@
 
                                         <strong> Dear Sir/Madam,</strong><br> <br>
 
-                                        We Congratulate you for being the part of <strong>JANHIT.</strong> We wholeheartedly welcome you. We really appreciate your decision of choosing the best system which will make you economically independent. We have launched a totally different concept which will make you feel everything different than old traditional System. We have provided you a golden opportunity to prove yourself and carry out all your caliber .
+                                        We Congratulate you for being the part of <strong>Janhit Charitable Trust.</strong> We wholeheartedly welcome you. We really appreciate your decision of choosing the best system which will make you economically independent. We have launched a totally different concept which will make you feel everything different than old traditional System. We have provided you a golden opportunity to prove yourself and carry out all your caliber .
                                         <br> <br>
-                                        OUR concept is genuine System in which you have to enrol persons who are really interested and voluntarily offer them to be the part of this group just like you and develop a strong system which will keep you at very high prominent place and apex of success. All the staff members are always ready to assist you all the time. Please do feel free to share your new thoughts and ideas. For latest information and updates keep surfing at <strong> www.gogreensavetree.in </strong> and forward your suggestion by mailing us to <strong> gogreensavetree52@gmail.com </strong> Your suggestions are very precious to us.   <br> <br>
+                                        OUR concept is genuine System in which you have to enrol persons who are really interested and voluntarily offer them to be the part of this group just like you and develop a strong system which will keep you at very high prominent place and apex of success. All the staff members are always ready to assist you all the time. Please do feel free to share your new thoughts and ideas. For latest information and updates keep surfing at <strong> www.janhitcharitable.com </strong> and forward your suggestion by mailing us to <strong> janhitctrustkop@gmail.com </strong> Your suggestions are very precious to us.   <br> <br>
 
-                                        We once again congratulate and welcome you to the world of <strong> JANHIT </strong>  System and thank you for giving us an opportunity to serve you.   <br> <br>
+                                        We once again congratulate and welcome you to the world of <strong> Janhit Charitable Trust </strong>  System and thank you for giving us an opportunity to serve you.   <br> <br>
 
                                         Yours Sincerely,   <br> <br>
 
-                                        <strong> JANHIT </strong> Team  <br> <br>
+                                        <strong> Janhit Charitable Trust </strong> Team  <br> <br>
 
                                         <br> 
                                         <strong> Managing Director </strong>

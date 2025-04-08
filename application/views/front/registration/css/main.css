@@ -160,13 +160,13 @@ iframe {
   background: -moz-linear-gradient(45deg, rgba(213,0,125,0.8), rgba(229,57,53,0.8));*/
   /*background: linear-gradient(45deg, rgba(213,0,125,0.8), rgba(229,57,53,0.8));*/
   /*background: linear-gradient(45deg, rgba(228, 171, 205, 0.08), rgba(195, 171, 171, 0.8));*/
-  background: #6fc00b87;
+  background: #ada17a87;
 }
 
 .wrap-contact2 {
     width: 510px;
     /*background: #989c96;*/
-    background: #3a906c9c;
+    background: #f8ec679c;
     border-radius: 10px;
     overflow: hidden;
     padding: 40px 59px 90px 54px;
@@ -307,7 +307,7 @@ textarea.input2 + .focus-input2::after {
     border: 1px solid;
     padding: 4px;
     margin: 3px;
-    background: #0dde14;
+    background: #fc2c;
     
 }
 /*------------------------------------------------------------------
@@ -390,7 +390,7 @@ textarea.input2 + .focus-input2::after {
   color: #fff;
   line-height: 1.2;
   /*border:1px solid;*/
-  background: #0dde14;
+  background: #f8ec679c;
 
 }
 

@@ -67,13 +67,13 @@
                             <div class="control-group">
                                 <label for="typeahead" class="control-label">User Name<sup class="mandatory"></sup> </label>
                                 <div class="controls">
-                                    <input readonly="" type="text" value="<?php echo str_replace('"', '&quot;', stripslashes($arr_admin_detail['full_name'])); ?>" name="full_name" id="full_name" class="FETextInput">
+                                    <input  type="text" value="<?php echo str_replace('"', '&quot;', stripslashes($arr_admin_detail['full_name'])); ?>" name="full_name" id="full_name" class="FETextInput">
                                 </div>
                             </div>
                             <div class="control-group">
                                 <label for="typeahead" class="control-label">Email Id<sup class="mandatory">*</sup> </label>
                                 <div class="controls">
-                                    <input type="text" readonly="" value=<?php echo stripslashes($arr_admin_detail['user_email']); ?> name="user_email" id="user_email" class="FETextInput">
+                                    <input type="text"  value=<?php echo stripslashes($arr_admin_detail['user_email']); ?> name="user_email" id="user_email" class="FETextInput">
                                     <input type="hidden" value=<?php echo stripslashes($arr_admin_detail['user_email']); ?> name="old_email" id="old_email" class="FETextInput">
                                 </div>
                             </div>
@@ -89,7 +89,6 @@
                                 <label for="typeahead" class="control-label">Address<sup class="mandatory"></sup> </label>
                                 <div class="controls">
                                     <textarea name="address" id="address" class="FETextInput"><?php echo $arr_admin_detail['address']; ?></textarea>
-                                    
                                 </div>
                             </div>
 

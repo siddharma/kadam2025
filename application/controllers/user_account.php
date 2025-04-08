@@ -92,7 +92,7 @@ class User_Account extends CI_Controller {
                 );
              $table_name = 'mst_users';
              $condition_to_pass = array("user_id" => $data['user_account']['user_id']);
-             $this->common_model->updateRow($table_name, $update_data, $condition_to_pass);
+            // $this->common_model->updateRow($table_name, $update_data, $condition_to_pass);
              redirect(base_url() . "dashboard");
        }
         $this->load->view('front/user-account/change-pass', $data);
@@ -171,7 +171,6 @@ class User_Account extends CI_Controller {
                     redirect(base_url() . 'pnrupdate');
                 }
 			 
-
                 $rand = rand();
                 $image_name = 'janhit_' .$data['user_account']['user_sponser_id'].'_'.$this->input->post('pnr_holder'.$i).'_'. $rand.'.jpg';
                 $url = $_SERVER['DOCUMENT_ROOT'].'/media/front/transaction-photo/'.$image_name;
@@ -226,8 +225,8 @@ class User_Account extends CI_Controller {
                 }   */
                     //add form count details
                     $fieldsa = array(
-                        'user_sponser_id'=>$data['user_account']['user_sponser_id'],
-                        'form_count'=>$this->input->post('form'),
+                        'user_sponser_id' => $data['user_account']['user_sponser_id'],
+                        'form_count' => $this->input->post('form'),
                     );
                     
                     $tablea = 'green_trans_users_form';

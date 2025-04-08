@@ -140,7 +140,7 @@ class Buyplans extends CI_Controller {
                 $link .= '<table width="100%" cellspacing="0" cellpadding="0">';
                 $link .= '<tr>';
                 $link .= '<td width="50%" style="height:60px;" valign="top">';
-                $link .= '<p style="font-size:25px; font-weight:bolder; text-align:center;">MUSCLE TREE GoGreen</p>';
+                $link .= '<p style="font-size:25px; font-weight:bolder; text-align:center;">Janhit Charitable Trust</p>';
                 $link .= '<p style="text-align:center; font-weight:bold; margin-bottom:0px; margin-top:4px;">DC Plaza, Nagala Park, Kolhapur. 416003</p>';
                 $link .= '<p style="text-align:center; font-weight:bold; margin-top:4px; margin-bottom:0px;">Maharashtra (India)</p>';
                 $link .= '<p style="text-align:center; font-weight:bold; margin-bottom:0px; margin-top:4px;"><i class="fa fa-phone" aria-hidden="true"></i> +91 8149199911, +91 8149299911</p>';
@@ -472,7 +472,7 @@ class Buyplans extends CI_Controller {
                 $link .= '<table width="100%" cellspacing="0" cellpadding="0">';
                 $link .= '<tr>';
                 $link .= '<td width="50%" style="height:60px;" valign="top">';
-                $link .= '<p style="font-size:25px; font-weight:bolder; text-align:center;">MUSCLE TREE GoGreen</p>';
+                $link .= '<p style="font-size:25px; font-weight:bolder; text-align:center;">Janhit Charitable Trust</p>';
                 $link .= '<p style="text-align:center; font-weight:bold; margin-bottom:0px; margin-top:4px;">DC Plaza, Nagala Park, Kolhapur. 416003</p>';
                 $link .= '<p style="text-align:center; font-weight:bold; margin-top:4px; margin-bottom:0px;">Maharashtra (India)</p>';
                 $link .= '<p style="text-align:center; font-weight:bold; margin-bottom:0px; margin-top:4px;"><i class="fa fa-phone" aria-hidden="true"></i> +91 8149199911, +91 8149299911</p>';
