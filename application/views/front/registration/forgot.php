@@ -27,13 +27,11 @@
 	<!--<div class="bg-contact2">-->
 		<div class="container-contact2">
 			<div class="wrap-contact2">
-                            <?php
-            $msg = $this->session->userdata('password_recover');
-           
-            ?>
-                               <!--[message box]-->
-            <?php if ($msg != '') { ?>
-                <div class="msg_box alert alert-success">
+            <!--[message box]-->
+            <?php 
+			$msg = $this->session->userdata('password_recover');
+			if ($msg != '') { ?>
+                <div class="msg_box alert alert-danger">
                     <button type="button" class="close" data-dismiss="alert" id="msg_close" name="msg_close">×</button>
                     <?php
                     echo $msg;
@@ -42,10 +40,7 @@
                 </div>
                 <?php
             }
-           
-          
-           
-            ?>
+			?>
                            
                             
                             <form class="contact2-form validate-form" method="post" action="<?php echo base_url();?>reset-password">

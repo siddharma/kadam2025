@@ -342,11 +342,11 @@ class User extends CI_Controller {
 ////                    } else {
 ////                        $status = 0;
 ////                    }
-////                    if ($this->input->post('email_verified') != "") {
-////                        $email_verified = $this->input->post('email_verified');
-////                    } else {
-////                        $email_verified = 0;
-////                    }
+                   if ($this->input->post('email_verified') != "") {
+                       $email_verified = $this->input->post('email_verified');
+                   } else {
+                       $email_verified = 1;
+                   }
 //                    /* $email_verified = '1'; */
 ////                    $activation_code = $arr_admin_detail['activation_code'];
 //                } else {
@@ -363,8 +363,9 @@ class User extends CI_Controller {
                         "user_email" => mysql_real_escape_string($this->input->post('user_email')),
                         "user_password" => ($this->input->post('user_password')),
                         'role_id' => 0,
+                        
                         "user_status" => mysql_real_escape_string($this->input->post('user_status')),
-                        "email_verified" => 1, //mysql_real_escape_string($this->input->post('email_verified')),
+                        'email_verified' => $email_verified, //mysql_real_escape_string($this->input->post('email_verified')),
                         "mobile_no" => mysql_real_escape_string($this->input->post('mobile_no')),
                         'full_name' => mysql_real_escape_string($this->input->post('full_name')),
                         'annual_income' => mysql_real_escape_string($this->input->post('annual_income')),
@@ -386,10 +387,10 @@ class User extends CI_Controller {
                         "user_name" => mysql_real_escape_string($this->input->post('user_name')),
                         "user_email" => mysql_real_escape_string($this->input->post('user_email')),
 //                        "user_status" => $status,
-//                        'email_verified' => $email_verified,
+                       'email_verified' => $email_verified,
 //                        'activation_code' => $activation_code,
                          "user_status" => mysql_real_escape_string($this->input->post('user_status')),
-                        "email_verified" => 1, //mysql_real_escape_string($this->input->post('email_verified')),
+                        // "email_verified" => 1, //mysql_real_escape_string($this->input->post('email_verified')),
                         'role_id' => 0,
                         'full_name' => mysql_real_escape_string($this->input->post('full_name')),
                         "mobile_no" => mysql_real_escape_string($this->input->post('mobile_no')),
@@ -404,7 +405,7 @@ class User extends CI_Controller {
                       
                     );
                 }
-
+                
                 /* updating the user details */
                 $this->common_model->updateRow("mst_users", $arr_to_update, array("user_id" => $this->input->post('edit_id')));
 //                if ($this->input->post('user_email') == $this->input->post('old_email')) {

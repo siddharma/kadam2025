@@ -193,6 +193,8 @@ ADD `upi_address` VARCHAR(100) NOT NULL  AFTER `mobile_no`;
       
         $data = $this->common_model->commonFunction();
         $data['user_session'] = $this->session->userdata('user_account');
+        // print_r($data['user_account']);
+        // die;
          //Get all members upto 7 levels
         $sponser_data['sponser_id'][] = $data['user_account']['user_sponser_id'];
         $userDetail = $this->getUserFormTreeInfo($sponser_data, 10);
@@ -284,67 +286,67 @@ ADD `upi_address` VARCHAR(100) NOT NULL  AFTER `mobile_no`;
 
             <tr style=" border: 1px solid black;border-collapse: collapse;">
                 <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; margin-top:25px;width:10%"><strong>9 </strong></td>
-                <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:35%">'.ucfirst($userDetail['full_name'][9]).' ['.$userDetail['sponser_id'][9].']</td>
-                <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; width:20%">'.($userDetail['mobile_no'][9]).'</td>
-                <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:25%">'.($userDetail['upi_address'][9]).'</td>
+                <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:35%">'.ucfirst($userDetail['full_name'][9-1]).' ['.$userDetail['sponser_id'][9-1].']</td>
+                <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; width:20%">'.($userDetail['mobile_no'][9-1]).'</td>
+                <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:25%">'.($userDetail['upi_address'][9-1]).'</td>
                 <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:10%">'.$data['global']['level9_amt'].'</td>
             </tr>
 
             <tr style=" border: 1px solid black;border-collapse: collapse;">
                 <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; margin-top:25px;width:10%"><strong>8 </strong></td>
-                <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:35%">'.ucfirst($userDetail['full_name'][8]).' ['.$userDetail['sponser_id'][8].']</td>
-                <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; width:20%">'.($userDetail['mobile_no'][9]).'</td>
-                <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:25%">'.($userDetail['upi_address'][8]).'</td>
+                <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:35%">'.ucfirst($userDetail['full_name'][8-1]).' ['.$userDetail['sponser_id'][8-1].']</td>
+                <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; width:20%">'.($userDetail['mobile_no'][8-1]).'</td>
+                <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:25%">'.($userDetail['upi_address'][8-1]).'</td>
                 <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:10%">'.$data['global']['level8_amt'].'</td>
             </tr>
   
             <tr style=" border: 1px solid black;border-collapse: collapse;">
                 <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; margin-top:25px;width:10%"><strong>7 </strong></td>
-                <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:35%">'.ucfirst($userDetail['full_name'][7]).' ['.$userDetail['sponser_id'][7].']</td>
-                <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; width:20%">'.($userDetail['mobile_no'][7]).'</td>
-                <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:25%">'.($userDetail['upi_address'][7]).'</td>
+                <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:35%">'.ucfirst($userDetail['full_name'][7-1]).' ['.$userDetail['sponser_id'][7-1].']</td>
+                <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; width:20%">'.($userDetail['mobile_no'][7-1]).'</td>
+                <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:25%">'.($userDetail['upi_address'][7-1]).'</td>
                 <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:10%">'.$data['global']['level7_amt'].'</td>
             </tr>
             <tr style=" border: 1px solid black;border-collapse: collapse;">
                 <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; margin-top:25px;width:10%"><strong>6 </strong></td>
-                <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:35%">'.ucfirst($userDetail['full_name'][6]).' ['.$userDetail['sponser_id'][6].']</td>
-                <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; width:20%">'.($userDetail['mobile_no'][6]).'</td>
-                <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:25%">'.($userDetail['upi_address'][6]).'</td>
+                <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:35%">'.ucfirst($userDetail['full_name'][6-1]).' ['.$userDetail['sponser_id'][6-1].']</td>
+                <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; width:20%">'.($userDetail['mobile_no'][6-1]).'</td>
+                <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:25%">'.($userDetail['upi_address'][6-1]).'</td>
                 <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:10%">'.$data['global']['level6_amt'].'</td>
             </tr>
             <tr style=" border: 1px solid black;border-collapse: collapse;">
                 <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; margin-top:25px;width:10%"><strong>5 </strong></td>
-                <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:35%">'.ucfirst($userDetail['full_name'][5]).' ['.$userDetail['sponser_id'][5].']</td>
-                <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; width:20%">'.($userDetail['mobile_no'][5]).'</td>
-                <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:25%">'.($userDetail['upi_address'][5]).'</td>
+                <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:35%">'.ucfirst($userDetail['full_name'][5-1]).' ['.$userDetail['sponser_id'][5-1].']</td>
+                <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; width:20%">'.($userDetail['mobile_no'][5-1]).'</td>
+                <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:25%">'.($userDetail['upi_address'][5-1]).'</td>
                 <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:10%">'.$data['global']['level5_amt'].'</td>
             </tr>
             <tr style=" border: 1px solid black;border-collapse: collapse;">
                 <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; margin-top:25px;width:10%"><strong>4 </strong></td>
-                <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:35%">'.ucfirst($userDetail['full_name'][4]).' ['.$userDetail['sponser_id'][4].']</td>
-                <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; width:20%">'.($userDetail['mobile_no'][4]).'</td>
-                <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:25%">'.($userDetail['upi_address'][4]).'</td>
+                <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:35%">'.ucfirst($userDetail['full_name'][4-1]).' ['.$userDetail['sponser_id'][4-1].']</td>
+                <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; width:20%">'.($userDetail['mobile_no'][4-1]).'</td>
+                <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:25%">'.($userDetail['upi_address'][4-1]).'</td>
                 <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:10%">'.$data['global']['level4_amt'].'</td>
             </tr>
             <tr style=" border: 1px solid black;border-collapse: collapse;">
                 <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; margin-top:25px;width:10%"><strong>3 </strong></td>
-                <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:35%">'.ucfirst($userDetail['full_name'][3]).' ['.$userDetail['sponser_id'][3].']</td>
-                <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; width:20%">'.($userDetail['mobile_no'][3]).'</td>
-                <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:25%">'.($userDetail['upi_address'][3]).'</td>
+                <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:35%">'.ucfirst($userDetail['full_name'][3-1]).' ['.$userDetail['sponser_id'][3-1].']</td>
+                <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; width:20%">'.($userDetail['mobile_no'][3-1]).'</td>
+                <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:25%">'.($userDetail['upi_address'][3-1]).'</td>
                 <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:10%">'.$data['global']['level3_amt'].'</td>
             </tr>
             <tr style=" border: 1px solid black;border-collapse: collapse;">
                 <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; margin-top:25px;width:10%"><strong>2 </strong></td>
-                <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:35%">'.ucfirst($userDetail['full_name'][2]).' ['.$userDetail['sponser_id'][2].']</td>
-                <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; width:20%">'.($userDetail['mobile_no'][2]).'</td>
-                <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:25%">'.($userDetail['upi_address'][2]).'</td>
+                <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:35%">'.ucfirst($userDetail['full_name'][2-1]).' ['.$userDetail['sponser_id'][2-1].']</td>
+                <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; width:20%">'.($userDetail['mobile_no'][2-1]).'</td>
+                <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:25%">'.($userDetail['upi_address'][2-1]).'</td>
                 <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:10%">'.$data['global']['level2_amt'].'</td>
             </tr>
             <tr style=" border: 1px solid black;border-collapse: collapse;">
                 <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; margin-top:25px;width:10%"><strong>1 </strong></td>
-                <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:35%">'.ucfirst($userDetail['full_name'][1]).' ['.$userDetail['sponser_id'][1].']</td>
-                <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; width:20%">'.($userDetail['mobile_no'][1]).'</td>
-                <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:25%">'.($userDetail['upi_address'][1]).'</td>
+                <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:35%">'.ucfirst($data['user_account']['full_name']).' ['.$data['user_account']['user_sponser_id'].']</td>
+                <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; width:20%">'.($data['user_account']['mobile_no']).'</td>
+                <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:25%">'.($data['user_account']['upi_address']).'</td>
                 <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:10%">'.$data['global']['level1_amt'].'</td>
             </tr>
 
@@ -498,67 +500,67 @@ $obj_pdf->Output('Form1.pdf', 'D');
 
         <tr style=" border: 1px solid black;border-collapse: collapse;">
             <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; margin-top:25px;width:10%"><strong>9 </strong></td>
-            <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:35%">'.ucfirst($userDetail['full_name'][9]).' ['.$userDetail['sponser_id'][9].']</td>
-            <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; width:20%">'.($userDetail['mobile_no'][9]).'</td>
-            <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:25%">'.($userDetail['upi_address'][9]).'</td>
+            <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:35%">'.ucfirst($userDetail['full_name'][9-1]).' ['.$userDetail['sponser_id'][9-1].']</td>
+            <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; width:20%">'.($userDetail['mobile_no'][9-1]).'</td>
+            <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:25%">'.($userDetail['upi_address'][9-1]).'</td>
             <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:10%">'.$data['global']['level9_amt'].'</td>
         </tr>
 
         <tr style=" border: 1px solid black;border-collapse: collapse;">
             <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; margin-top:25px;width:10%"><strong>8 </strong></td>
-            <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:35%">'.ucfirst($userDetail['full_name'][8]).' ['.$userDetail['sponser_id'][8].']</td>
-            <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; width:20%">'.($userDetail['mobile_no'][9]).'</td>
-            <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:25%">'.($userDetail['upi_address'][8]).'</td>
+            <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:35%">'.ucfirst($userDetail['full_name'][8-1]).' ['.$userDetail['sponser_id'][8-1].']</td>
+            <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; width:20%">'.($userDetail['mobile_no'][8-1]).'</td>
+            <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:25%">'.($userDetail['upi_address'][8-1]).'</td>
             <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:10%">'.$data['global']['level8_amt'].'</td>
         </tr>
 
         <tr style=" border: 1px solid black;border-collapse: collapse;">
             <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; margin-top:25px;width:10%"><strong>7 </strong></td>
-            <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:35%">'.ucfirst($userDetail['full_name'][7]).' ['.$userDetail['sponser_id'][7].']</td>
-            <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; width:20%">'.($userDetail['mobile_no'][7]).'</td>
-            <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:25%">'.($userDetail['upi_address'][7]).'</td>
+            <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:35%">'.ucfirst($userDetail['full_name'][7-1]).' ['.$userDetail['sponser_id'][7-1].']</td>
+            <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; width:20%">'.($userDetail['mobile_no'][7-1]).'</td>
+            <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:25%">'.($userDetail['upi_address'][7-1]).'</td>
             <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:10%">'.$data['global']['level7_amt'].'</td>
         </tr>
         <tr style=" border: 1px solid black;border-collapse: collapse;">
             <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; margin-top:25px;width:10%"><strong>6 </strong></td>
-            <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:35%">'.ucfirst($userDetail['full_name'][6]).' ['.$userDetail['sponser_id'][6].']</td>
-            <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; width:20%">'.($userDetail['mobile_no'][6]).'</td>
-            <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:25%">'.($userDetail['upi_address'][6]).'</td>
+            <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:35%">'.ucfirst($userDetail['full_name'][6-1]).' ['.$userDetail['sponser_id'][6-1].']</td>
+            <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; width:20%">'.($userDetail['mobile_no'][6-1]).'</td>
+            <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:25%">'.($userDetail['upi_address'][6-1]).'</td>
             <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:10%">'.$data['global']['level6_amt'].'</td>
         </tr>
         <tr style=" border: 1px solid black;border-collapse: collapse;">
             <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; margin-top:25px;width:10%"><strong>5 </strong></td>
-            <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:35%">'.ucfirst($userDetail['full_name'][5]).' ['.$userDetail['sponser_id'][5].']</td>
-            <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; width:20%">'.($userDetail['mobile_no'][5]).'</td>
-            <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:25%">'.($userDetail['upi_address'][5]).'</td>
+            <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:35%">'.ucfirst($userDetail['full_name'][5-1]).' ['.$userDetail['sponser_id'][5-1].']</td>
+            <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; width:20%">'.($userDetail['mobile_no'][5-1]).'</td>
+            <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:25%">'.($userDetail['upi_address'][5-1]).'</td>
             <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:10%">'.$data['global']['level5_amt'].'</td>
         </tr>
         <tr style=" border: 1px solid black;border-collapse: collapse;">
             <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; margin-top:25px;width:10%"><strong>4 </strong></td>
-            <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:35%">'.ucfirst($userDetail['full_name'][4]).' ['.$userDetail['sponser_id'][4].']</td>
-            <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; width:20%">'.($userDetail['mobile_no'][4]).'</td>
-            <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:25%">'.($userDetail['upi_address'][4]).'</td>
+            <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:35%">'.ucfirst($userDetail['full_name'][4-1]).' ['.$userDetail['sponser_id'][4-1].']</td>
+            <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; width:20%">'.($userDetail['mobile_no'][4-1]).'</td>
+            <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:25%">'.($userDetail['upi_address'][4-1]).'</td>
             <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:10%">'.$data['global']['level4_amt'].'</td>
         </tr>
         <tr style=" border: 1px solid black;border-collapse: collapse;">
             <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; margin-top:25px;width:10%"><strong>3 </strong></td>
-            <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:35%">'.ucfirst($userDetail['full_name'][3]).' ['.$userDetail['sponser_id'][3].']</td>
-            <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; width:20%">'.($userDetail['mobile_no'][3]).'</td>
-            <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:25%">'.($userDetail['upi_address'][3]).'</td>
+            <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:35%">'.ucfirst($userDetail['full_name'][3-1]).' ['.$userDetail['sponser_id'][3-1].']</td>
+            <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; width:20%">'.($userDetail['mobile_no'][3-1]).'</td>
+            <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:25%">'.($userDetail['upi_address'][3-1]).'</td>
             <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:10%">'.$data['global']['level3_amt'].'</td>
         </tr>
         <tr style=" border: 1px solid black;border-collapse: collapse;">
             <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; margin-top:25px;width:10%"><strong>2 </strong></td>
-            <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:35%">'.ucfirst($userDetail['full_name'][2]).' ['.$userDetail['sponser_id'][2].']</td>
-            <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; width:20%">'.($userDetail['mobile_no'][2]).'</td>
-            <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:25%">'.($userDetail['upi_address'][2]).'</td>
+            <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:35%">'.ucfirst($userDetail['full_name'][2-1]).' ['.$userDetail['sponser_id'][2-1].']</td>
+            <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; width:20%">'.($userDetail['mobile_no'][2-1]).'</td>
+            <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:25%">'.($userDetail['upi_address'][2-1]).'</td>
             <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:10%">'.$data['global']['level2_amt'].'</td>
         </tr>
         <tr style=" border: 1px solid black;border-collapse: collapse;">
             <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; margin-top:25px;width:10%"><strong>1 </strong></td>
-            <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:35%">'.ucfirst($userDetail['full_name'][1]).' ['.$userDetail['sponser_id'][1].']</td>
-            <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; width:20%">'.($userDetail['mobile_no'][1]).'</td>
-            <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:25%">'.($userDetail['upi_address'][1]).'</td>
+            <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:35%">'.ucfirst($data['user_account']['full_name']).' ['.$data['user_account']['user_sponser_id'].']</td>
+            <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; width:20%">'.($data['user_account']['mobile_no']).'</td>
+            <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:25%">'.($data['user_account']['upi_address']).'</td>
             <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:10%">'.$data['global']['level1_amt'].'</td>
         </tr>
 
@@ -710,9 +712,9 @@ public function form3PDF(){
 
       <tr style=" border: 1px solid black;border-collapse: collapse;">
           <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; margin-top:25px;width:10%"><strong>1 </strong></td>
-          <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:35%">'.ucfirst($userDetail['full_name'][1]).' ['.$userDetail['sponser_id'][1].']</td>
-          <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; width:20%">'.($userDetail['mobile_no'][1]).'</td>
-          <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:25%">'.($userDetail['upi_address'][1]).'</td>
+          <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:35%">'.ucfirst($data['user_account']['full_name']).' ['.$data['user_account']['user_sponser_id'].']</td>
+          <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; width:20%">'.($data['user_account']['mobile_no']).'</td>
+          <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:25%">'.($data['user_account']['upi_address']).'</td>
           <td style=" border: 1px solid black;border-collapse: collapse; padding: 15px; text-align: left;width:10%">'.$data['global']['form3_level1_amt'].'</td>
       </tr>
 

@@ -27,13 +27,12 @@
 	<!--<div class="bg-contact2">-->
 		<div class="container-contact2">
 			<div class="wrap-contact2">
-                             <?php
-            $msg = $this->session->userdata('login_error');
-           
-            ?>
+                              
             <!--[message box]-->
-            <?php if ($msg != '') { ?>
-                <div class="msg_box alert alert-success">
+            <?php 
+            $msg = $this->session->userdata('login_error');
+            if ($msg != '') { ?>
+                <div class="msg_box alert alert-danger">
                     <button type="button" class="close" data-dismiss="alert" id="msg_close" name="msg_close">×</button>
                     <?php
                     echo $msg;
@@ -42,12 +41,9 @@
                 </div>
                 <?php
             }
-           
+             
             $msg2 = $this->session->userdata('password_recover');
-           
-            ?>
-            <!--[message box]-->
-            <?php if ($msg2 != '') { ?>
+            if ($msg2 != '') { ?>
                 <div class="msg_box alert alert-success">
                     <button type="button" class="close" data-dismiss="alert" id="msg_close" name="msg_close">×</button>
                     <?php
@@ -59,15 +55,7 @@
             }
             ?> 
             
-                             <?php if($this->session->userdata('login_error')){
-                                    echo $this->session->userdata('login_error');
-                                    }
-                                    $this->session->unset_userdata('login_error');
-                              if($this->session->userdata('password_recover')){
-                                    echo $this->session->userdata('password_recover');
-                                    }
-                                    $this->session->unset_userdata('password_recover');
-                                    ?>
+                             
                             <span class="clslogin">
                             <a href="<?php echo base_url();?>">HOME</a></span>
                             <span class="clslogin"><a href="<?php echo base_url();?>signup">REGISTER</a></span>

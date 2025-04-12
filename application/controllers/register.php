@@ -17,7 +17,12 @@ class Register extends CI_Controller {
         $fields_to_pass = '*';
         $condition_to_pass = array("user_sponser_id" => $_POST['user_id']);
         $arr_suser_data = $this->register_model->getUserInformation($table_to_pass, $fields_to_pass, $condition_to_pass, $order_by_to_pass = '', $limit_to_pass = '', $debug_to_pass = 0);
+                
         if(count($arr_suser_data)>0){
+            if($arr_suser_data[0]['user_status'] != 1){
+                echo '<p class="input-error-cl">This sponser is not active, Please contact with administrator.<br><br></p>';
+                exit;
+            }
         $table_to_pass = 'mst_users';
         $fields_to_pass = '*';
         $condition_to_pass = array("sponser_id" => $_POST['user_id']);
@@ -64,13 +69,19 @@ class Register extends CI_Controller {
             $user_email = $this->input->post('user_email');
             $sponser_id = $this->input->post('sponser_id');
             $table_to_pass = 'mst_users';
-            $fields_to_pass = array('user_id', 'user_email');
+            $fields_to_pass = array('user_id', 'user_email', 'user_status');
             $condition_to_pass = array("user_sponser_id" => $sponser_id);
             $arr_login_data = $this->register_model->getUserInformation($table_to_pass, $fields_to_pass, $condition_to_pass, $order_by_to_pass = '', $limit_to_pass = '', $debug_to_pass = 0);
            
             $condition_to_pass = array("sponser_id" => $sponser_id);
             $arr_user_data = $this->register_model->getUserInformation($table_to_pass, $fields_to_pass, $condition_to_pass, $order_by_to_pass = '', $limit_to_pass = '', $debug_to_pass = 0);
             $direct = count($arr_user_data)+1;
+            if (count($arr_login_data) == 1  && $arr_login_data[0]['user_status'] != 1 ) {
+                $this->session->set_userdata('error_message', 'Sponser is not an active user. Please contact to administrator ');
+                redirect(base_url().'signup');
+                exit;
+            }
+
             // print_r($arr_login_data);
             // die();
             if (count($arr_login_data) == 1  && $direct <=3 ) {
@@ -147,7 +158,7 @@ class Register extends CI_Controller {
                 $this->session->set_userdata('message', 'You are successfully registered user with id '. $six_digit_random_number);
                 redirect(base_url().'signup');
             } else {
-                $this->session->set_userdata('message', 'Sorry for inconvinience! <br/> You have already registered 3 directs. <br/> For more help contact with administrator.');
+                $this->session->set_userdata('error_message', 'Sorry for inconvinience! <br/> You have already registered 3 directs. <br/> For more help contact with administrator.');
             }
         }
         
@@ -171,8 +182,8 @@ class Register extends CI_Controller {
                     $this->session->set_userdata('login_error', "Please enter correct password.");
                     redirect(base_url() . 'signin');
                 } elseif ($arr_login_data[0]['email_verified'] == 1) {
-                    if ($arr_login_data[0]['user_status'] == 2) {
-                        $this->session->set_userdata('login_error', "Your account has been blocked by administrator.");
+                    if (in_array($arr_login_data[0]['user_status'], [0,2])) {
+                        $this->session->set_userdata('login_error', "This account is not active. <br/>Please contact to administrator.");
                         redirect(base_url() . 'signin');
                     } else {
                         $user_data['user_id'] = $arr_login_data[0]['user_id'];
@@ -199,8 +210,9 @@ class Register extends CI_Controller {
                         redirect(base_url().'dashboard');
                     }
                 } else {
-                    $resend_link = base_url() . 'resend-verfication-link/' . $arr_login_data[0]['user_id'];
-                    $this->session->set_userdata('login_error', "Please activate your account.<a href='" . $resend_link . "'>click here</a> to resend the verification link.");
+                    $this->session->set_userdata('login_error', "This account is not active. <br/>Please contact to administrator.");
+                    // $resend_link = base_url() . 'resend-verfication-link/' . $arr_login_data[0]['user_id'];
+                    // $this->session->set_userdata('login_error', "Please activate your account.<a href='" . $resend_link . "'>click here</a> to resend the verification link.");
                     redirect(base_url() . 'signin');
                 }
             } else {
