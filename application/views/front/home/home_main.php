@@ -695,7 +695,7 @@
 
       <div class="row align-center copyright">
         <div class="col-sm-12">
-          <p>&copy; Janhit Charitable Trust</p>
+          <p>&copy; Janhit Charitable Trust 999</p>
           <div class="credits">
             <!--
               All the links in the footer should remain intact.

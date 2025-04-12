@@ -288,8 +288,8 @@ public function getRecentUser() {
         //$SQL_Query = "SELECT * FROM " . $this->db->dbprefix . "mst_users t "
           //      . " INNER JOIN " . $this->db->dbprefix . "mst_users mu ON mu.user_sponser_id=t.user_sponser_id $strJoinCondition order by trans_id DESC";
 //  die;
-        $SQL_Query = "SELECT (3-count(mu.sponser_id)) as countEmptyPlaces, u.user_sponser_id, u.full_name, u.sponser_id, u.upi_address, u.mobile_no, u.form_id  FROM " . $this->db->dbprefix . "mst_users as u 
-        LEFT JOIN " . $this->db->dbprefix . "mst_users as mu ON u.user_sponser_id = mu.sponser_id ".$strJoinCondition."  GROUP BY u.sponser_id HAVING countEmptyPlaces > 0 ORDER BY u.user_id";
+        $SQL_Query = " SELECT (3- (SELECT count(*) FROM " . $this->db->dbprefix . "mst_users as gmu WHERE gmu.sponser_id =u.user_sponser_id ) ) as countEmptyPlaces, u.user_sponser_id, u.full_name, u.sponser_id, u.upi_address, u.mobile_no, u.form_id FROM " . $this->db->dbprefix . "mst_users as u 
+        ".$strJoinCondition." ORDER BY u.user_id";
 //  die;
         return $this->db->query($SQL_Query)->result_array();
     }

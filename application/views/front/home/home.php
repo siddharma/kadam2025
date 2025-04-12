@@ -50,6 +50,8 @@
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav" data-0="margin-top:20px;" data-300="margin-top:5px;">
             <li class="active"><a href="<?php echo base_url();?>">Home</a></li>
+            <li><a href="#section-about">About Us</a></li>
+            <li><a href="#section-contact">Contact</a></li>
             <li><a href="<?php echo base_url();?>signin">Login</a></li>
             <li><a href="<?php echo base_url();?>signup">Sign Up</a></li>
           </ul>
@@ -146,7 +148,7 @@
           <div class="col-md-offset-3 col-md-6">
             <div class="title">
               <div class="wow bounceIn">
-                <h2 class="section-heading animated" data-animation="bounceInUp">AWARENESS</h2>
+                <h2 class="section-heading animated" data-animation="bounceInUp">ABOUT US</h2>
               </div>
             </div>
           </div>
@@ -156,7 +158,9 @@
           <div class="row-slider">
             <div class="col-lg-6 mar-bot30">
               <div class="responsive-slider" data-spy="responsive-slider" data-autoplay="true">
-                <div class="slides" data-group="slides">
+              <img alt="" class="img-responsive" src="<?php echo base_url();?>media/front/gogreen-template/img/qr.jpeg" width="70%" height="" /></li>
+
+                <!-- <div class="slides" data-group="slides">
                   <ul>
                     <div class="slide-body" data-group="slide">
                       <li><img alt="" class="img-responsive" src="<?php echo base_url();?>media/front/gogreen-template/img/9.jpg" width="100%" height="350" /></li>
@@ -168,16 +172,25 @@
                   <a class="slider-control left" href="<?php echo base_url();?>media/front/gogreen-template/#" data-jump="prev"><i class="fa fa-angle-left fa-2x"></i></a>
                   <a class="slider-control right" href="<?php echo base_url();?>media/front/gogreen-template/#" data-jump="next"><i class="fa fa-angle-right fa-2x"></i></a>
 
-                </div>
+                </div> -->
               </div>
             </div>
 
             <div class="col-lg-6 ">
               <div class="company mar-left10">
-                <h4>Cost of Oxygen and Trees</h4>
-                <p>The common human being breathes the amount of oxygen in a day which is sufficient to fill the 3 oxygen cylinders.
-One oxygen cylinder’s cost is 700 rupee ($10) so a common human consumes the oxygen of Rs 2100 ($30) per day. And in the year, it’s Rs 7,66,500 and in the lifespan of 65 years, a person consumes the oxygen of more than 5 crores.
-We get the oxygen of crores in free of costs from trees, still we cut them. Think about it.</p>
+                <h4>The purpose of the trust</h4>
+                <p> Scan for financial help please <br/>
+• To help the poor people in the community and implement the financial aid system for them.<br/>
+• Organizing guidance camps for social development of women.<br/>
+• Promoting and promoting health information and importance to promote and promote their social status.<br/>
+• Honor and glory of students who have received special quality in various exams at Village Taluka District State and National level and start a library.<br/>
+• Urging for competition exams for youth in rural and urban areas, e.g.  To facilitate MPSC, UPSC and hostel boarding.<br/>
+• Medical diagnosis, mini hospital, polytechnic rotating clinic, ambulance to start on a charity in urban and rural areas.<br/>
+• Financial assistance to the victims of the illness, trying to get help.<br/>
+• Starting Ayurvedic Hospital, facilitating nature treatment.<br/>
+• To guide various sports from sports operations<br/>
+• To try to get the guidance of scientists or subject experts about agriculture.<br/>
+• To maintain environmental balance, implementing various activities for environmental balance, e.g.  Forestry tree ban and environmental awareness program</p>
               </div>
             </div>
 
@@ -191,7 +204,7 @@ We get the oxygen of crores in free of costs from trees, still we cut them. Thin
   <!--/about-->
 
   <!-- spacer section:testimonial -->
-  <section id="testimonials-3" class="section" data-stellar-background-ratio="0.5">
+  <!-- <section id="testimonials-3" class="section" data-stellar-background-ratio="0.5">
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
@@ -201,6 +214,24 @@ We get the oxygen of crores in free of costs from trees, still we cut them. Thin
               <br/>
               <!--<span class="author">&mdash; Jouse Manuel <a href="<?php echo base_url();?>media/front/gogreen-template/#">www.jouse-manuel.com</a></span>-->
             </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </section> -->
+  <section id="section-contact" class="section" data-stellar-background-ratio="0.5">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="align-center">
+            <div class="about pad-top40 pad-bot40 clearfix">
+              <h5>Contact us: 7559490875 </h5>
+              <h5>Email: janhitctrustkop@gmail.com </h5>
+
+              </div>
 
           </div>
         </div>
