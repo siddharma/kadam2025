@@ -79,6 +79,7 @@ $route['update-donation-status'] = "team_details/updateDpnationStatus";
 // User admin Report
 $route['report/userlist'] = "reports/userReport";
 $route['report/income'] = "reports/userDonationIncome";
+$route['report/check-levels'] = "reports/checkEmptyLevels";
 $route['report/userlog'] = "user/log_list";
 
 

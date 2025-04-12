@@ -26,6 +26,7 @@
                         <li class="nav-header hidden-tablet">Report Details</li>
                         <li> <a class="ajax-link" href="<?php echo base_url(); ?>report/userlist"><i class="icon-user"></i> <span class="hidden-tablet">Users Report</span></a> </li>
                         <li> <a class="ajax-link" href="<?php echo base_url(); ?>report/income"><i class="icon-user"></i> <span class="hidden-tablet">Donation Income</span></a> </li>
+                        <li> <a class="ajax-link" href="<?php echo base_url(); ?>report/check-levels"><i class="icon-user"></i> <span class="hidden-tablet">Empty Places</span></a> </li>
                         <li> <a class="ajax-link" href="<?php echo base_url(); ?>report/userlog"><i class="icon-user"></i> <span class="hidden-tablet">User Log</span></a> </li>
                          </ul>
                 </div>

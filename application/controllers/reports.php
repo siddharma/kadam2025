@@ -86,4 +86,28 @@ class Reports extends CI_Controller {
         $this->load->view('backend/reports/income', $data);
     }
 
+
+    public function checkEmptyLevels() {
+
+        /* #checking admin is logged in or not */
+        if (!$this->common_model->isLoggedIn()) {
+            redirect(base_url() . "backend/login");
+        }
+
+        /* Getting Common data */
+        $data = $this->common_model->commonFunction();
+        /* using the user model */
+        $this->load->model('user_model'); 
+        $data['user_id'] = ''; 
+        
+         if (!empty($this->input->post('user_id'))) {
+
+            $data['user_id'] =  (!empty($this->input->post('user_id'))?$this->input->post('user_id'):''); 
+         
+        }
+        $data['arr_user_list'] = $this->user_model->getEmptyLevels( $data['user_id'] );
+
+        $this->load->view('backend/reports/empty-places', $data);
+    }
+
 }

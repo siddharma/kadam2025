@@ -201,6 +201,8 @@ ADD `upi_address` VARCHAR(100) NOT NULL  AFTER `mobile_no`;
         $fix_data['sponser_id'][] = 'F100003';
         $userFixDetail = $this->getUserFormTreeInfo($fix_data, 3);
         
+    $this->load->model('user_model'); 
+    $data['arr_user_list'] = $this->user_model->getSponsersLevels( $data['user_account']['user_sponser_id'] );
          
         $this->load->library('Pdf');
         $obj_pdf = new Pdf('P', 'mm', 'A4', true, 'UTF-8', false);
@@ -364,18 +366,18 @@ ADD `upi_address` VARCHAR(100) NOT NULL  AFTER `mobile_no`;
             <br>
             <br>			
             <table style=" border: 1px solid black;width:100%;  border-collapse: inherit; border-spacing: 0 8px;">
-                    <tr>
-                <td style="padding: 15px; text-align: left;width:14%"><strong>Donar Name:</strong></td>
-                <td style=" padding: 15px; border-bottom: 1px solid black;width:36%;">'.$data['user_session']['full_name'].'</td>
-                <td style=" padding: 15px; text-align: left;width:14%"><strong>Mobile:</strong></td>
-                <td style=" padding: 15px; border-bottom: 1px solid black;width:36%">'.$data['user_session']['mobile_no'].'</td>
-              </tr>
-                    <tr>
-                <td style="padding: 15px; text-align: left;width:14%"><strong>UPI ID:</strong></td>
-                <td style=" padding: 15px; border-bottom: 1px solid black;width:36%;">'.$data['user_session']['upi_address'].'</td>
-                <td style=" padding: 15px; text-align: left;width:14%"><strong>Donar Id:</strong></td>
-                <td style=" padding: 15px; border-bottom: 1px solid black;width:36%">'.$data['user_session']['user_sponser_id'].'</td>
-              </tr>
+                        <tr>
+            <td style="padding: 15px; text-align: left;width:14%"><strong>Donar Name:</strong></td>
+            <td style=" padding: 15px; border-bottom: 1px solid black;width:36%;">'.(!empty($data['arr_user_list'][0]['full_name'])?$data['arr_user_list'][0]['full_name']:"").'</td>
+            <td style=" padding: 15px; text-align: left;width:14%"><strong>Mobile:</strong></td>
+            <td style=" padding: 15px; border-bottom: 1px solid black;width:36%">'.(!empty($data['arr_user_list'][0]['mobile_no'])?$data['arr_user_list'][0]['mobile_no']:"").'</td>
+          </tr>
+                <tr>
+            <td style="padding: 15px; text-align: left;width:14%"><strong>UPI ID:</strong></td>
+            <td style=" padding: 15px; border-bottom: 1px solid black;width:36%;">'.(!empty($data['arr_user_list'][0]['upi_address'])?$data['arr_user_list'][0]['upi_address']:"").'</td>
+            <td style=" padding: 15px; text-align: left;width:14%"><strong>Donar Id:</strong></td>
+            <td style=" padding: 15px; border-bottom: 1px solid black;width:36%">'.(!empty($data['arr_user_list'][0]['user_sponser_id'])?$data['arr_user_list'][0]['user_sponser_id']:"").'</td>
+          </tr>
                
               <tfoot >
                 <tr>
@@ -415,6 +417,8 @@ $obj_pdf->Output('Form1.pdf', 'D');
     $fix_data['sponser_id'][] = 'F100003';
     $userFixDetail = $this->getUserFormTreeInfo($fix_data, 3);
     
+    $this->load->model('user_model'); 
+    $data['arr_user_list'] = $this->user_model->getSponsersLevels( $data['user_account']['user_sponser_id'] );
      
     $this->load->library('Pdf');
     $obj_pdf = new Pdf('P', 'mm', 'A4', true, 'UTF-8', false);
@@ -578,18 +582,20 @@ $obj_pdf->Output('Form1.pdf', 'D');
         <br>
         <br>			
         <table style=" border: 1px solid black;width:100%;  border-collapse: inherit; border-spacing: 0 8px;">
-                <tr>
+            
+           <tr>
             <td style="padding: 15px; text-align: left;width:14%"><strong>Donar Name:</strong></td>
-            <td style=" padding: 15px; border-bottom: 1px solid black;width:36%;">'.$data['user_session']['full_name'].'</td>
+            <td style=" padding: 15px; border-bottom: 1px solid black;width:36%;">'.(!empty($data['arr_user_list'][1]['full_name'])?$data['arr_user_list'][1]['full_name']:"").'</td>
             <td style=" padding: 15px; text-align: left;width:14%"><strong>Mobile:</strong></td>
-            <td style=" padding: 15px; border-bottom: 1px solid black;width:36%">'.$data['user_session']['mobile_no'].'</td>
+            <td style=" padding: 15px; border-bottom: 1px solid black;width:36%">'.(!empty($data['arr_user_list'][1]['mobile_no'])?$data['arr_user_list'][1]['mobile_no']:"").'</td>
           </tr>
                 <tr>
             <td style="padding: 15px; text-align: left;width:14%"><strong>UPI ID:</strong></td>
-            <td style=" padding: 15px; border-bottom: 1px solid black;width:36%;">'.$data['user_session']['upi_address'].'</td>
+            <td style=" padding: 15px; border-bottom: 1px solid black;width:36%;">'.(!empty($data['arr_user_list'][1]['upi_address'])?$data['arr_user_list'][1]['upi_address']:"").'</td>
             <td style=" padding: 15px; text-align: left;width:14%"><strong>Donar Id:</strong></td>
-            <td style=" padding: 15px; border-bottom: 1px solid black;width:36%">'.$data['user_session']['user_sponser_id'].'</td>
+            <td style=" padding: 15px; border-bottom: 1px solid black;width:36%">'.(!empty($data['arr_user_list'][1]['user_sponser_id'])?$data['arr_user_list'][1]['user_sponser_id']:"").'</td>
           </tr>
+           
            
           <tfoot >
             <tr>
@@ -627,7 +633,11 @@ public function form3PDF(){
   $fix_data['sponser_id'][] = 'F100003';
   $userFixDetail = $this->getUserFormTreeInfo($fix_data, 3);
   
+  
+  $this->load->model('user_model'); 
+  $data['arr_user_list'] = $this->user_model->getSponsersLevels( $data['user_account']['user_sponser_id'] );
    
+  // print_r($data['arr_user_list']);
   $this->load->library('Pdf');
   $obj_pdf = new Pdf('P', 'mm', 'A4', true, 'UTF-8', false);
   $obj_pdf->SetCreator(PDF_CREATOR);
@@ -733,17 +743,17 @@ public function form3PDF(){
       <br>			
       <table style=" border: 1px solid black;width:100%;  border-collapse: inherit; border-spacing: 0 8px;">
               <tr>
-          <td style="padding: 15px; text-align: left;width:14%"><strong>Donar Name:</strong></td>
-          <td style=" padding: 15px; border-bottom: 1px solid black;width:36%;">'.$data['user_session']['full_name'].'</td>
-          <td style=" padding: 15px; text-align: left;width:14%"><strong>Mobile:</strong></td>
-          <td style=" padding: 15px; border-bottom: 1px solid black;width:36%">'.$data['user_session']['mobile_no'].'</td>
-        </tr>
-              <tr>
-          <td style="padding: 15px; text-align: left;width:14%"><strong>UPI ID:</strong></td>
-          <td style=" padding: 15px; border-bottom: 1px solid black;width:36%;">'.$data['user_session']['upi_address'].'</td>
-          <td style=" padding: 15px; text-align: left;width:14%"><strong>Donar Id:</strong></td>
-          <td style=" padding: 15px; border-bottom: 1px solid black;width:36%">'.$data['user_session']['user_sponser_id'].'</td>
-        </tr>
+            <td style="padding: 15px; text-align: left;width:14%"><strong>Donar Name:</strong></td>
+            <td style=" padding: 15px; border-bottom: 1px solid black;width:36%;">'.(!empty($data['arr_user_list'][2]['full_name'])?$data['arr_user_list'][2]['full_name']:"").'</td>
+            <td style=" padding: 15px; text-align: left;width:14%"><strong>Mobile:</strong></td>
+            <td style=" padding: 15px; border-bottom: 1px solid black;width:36%">'.(!empty($data['arr_user_list'][2]['mobile_no'])?$data['arr_user_list'][2]['mobile_no']:"").'</td>
+          </tr>
+                <tr>
+            <td style="padding: 15px; text-align: left;width:14%"><strong>UPI ID:</strong></td>
+            <td style=" padding: 15px; border-bottom: 1px solid black;width:36%;">'.(!empty($data['arr_user_list'][2]['upi_address'])?$data['arr_user_list'][2]['upi_address']:"").'</td>
+            <td style=" padding: 15px; text-align: left;width:14%"><strong>Donar Id:</strong></td>
+            <td style=" padding: 15px; border-bottom: 1px solid black;width:36%">'.(!empty($data['arr_user_list'][2]['user_sponser_id'])?$data['arr_user_list'][2]['user_sponser_id']:"").'</td>
+          </tr>
          
         <tfoot >
           <tr>
