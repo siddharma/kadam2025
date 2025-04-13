@@ -24,7 +24,7 @@ class Team_Details extends CI_Controller {
         $table_to_pass = 'mst_users';
         $fields_to_pass = '*';
         $condition_to_pass = array("sponser_id" => $data['user_account']['user_sponser_id']);
-        $arr_user_data = $this->register_model->getUserInformation($table_to_pass, $fields_to_pass, $condition_to_pass, $order_by_to_pass = '', $limit_to_pass = '', $debug_to_pass = 0);
+        $arr_user_data = $this->register_model->getUserInformation($table_to_pass, $fields_to_pass, $condition_to_pass, $order_by_to_pass = 'form_id', $limit_to_pass = '', $debug_to_pass = 0);
         $data['arr_team_data'] = $arr_user_data;
 //        echo "<pre>";print_r($data['arr_team_data']);echo "</pre>";die;
         $this->load->view('front/team/team-list', $data);

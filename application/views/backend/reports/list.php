@@ -164,7 +164,7 @@
                                             <td class="worktd"  align="left"><?php echo ucfirst($user['sfull_name']); ?></td>
                                             <td class="worktd"  align="left"><?php echo ($user['reg_user_count'])?$user['reg_user_count']:'0'; ?></td>
                                             <td class="worktd"  align="left"><?php echo ($user['user_count'])?$user['user_count']:'0'; ?></td>
-                                            <td class="worktd"  align="left"><?php  $cnt = 4-($user['user_count']);
+                                            <td class="worktd"  align="left"><?php  $cnt = 3-($user['user_count']);
                                              if($user['user_count']==3){ echo "0"; }else{ echo $cnt;} ?></td>
                                             <td class="worktd"  align="left"><?php echo ucfirst($user['is_active']); ?></td>
                                         </tr>

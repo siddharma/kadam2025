@@ -46,6 +46,7 @@ class Reports extends CI_Controller {
 //        echo "<pre>";print_r($data['arr_user_list']);echo "</pre>";die;
          
         }
+ 
         $this->load->view('backend/reports/list', $data);
     }
     public function userDonationIncome() {
