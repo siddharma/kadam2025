@@ -69,7 +69,7 @@
                 <div class="clear"></div>
                 <div style="overflow: auto;" class="col-md-12"><br><br><br><br><br><br>
                     <div style="margin-top:60px;">
-                        <div class="gogreencls" style="margin-left: 474px;margin-bottom: 15px;" onmouseout="$('.mypopup').hide();"
+                        <div class="gogreencls" style="margin-left: 50%;margin-bottom: 15px;" onmouseout="$('.mypopup').hide();"
                         onmousemove="getmsg('<?php echo $sponser_user['user_sponser_id'];?>', '<?php echo $sponser_user['register_date'];?>','<?php echo $sponser_user['activate_date'];?>', '<?php echo $sponser_user['full_name'];?>','<?php echo $sponser_user['sponser_id'];?>')">
                         <a href="<?php echo base_url();?>level/<?php echo $sponser_user['user_sponser_id'];?>">
                         <img src="<?php echo base_url(); ?>media/front/images/active.png" style="width:40px; height:40px;  border:0px solid #CCCCCC;"><br>

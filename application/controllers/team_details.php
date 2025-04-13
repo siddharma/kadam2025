@@ -47,7 +47,7 @@ class Team_Details extends CI_Controller {
         }
         $data = $this->common_model->commonFunction();
         $data['user_session'] = $this->session->userdata('user_account');
-      
+        $order_by_to_pass = 'form_id';
         if($this->input->post('search_id')!=''){
             //Check user clicked up or down data
              if($this->input->post('btnid')=='Up'){
@@ -58,14 +58,15 @@ class Team_Details extends CI_Controller {
                     $condition_to_pass = array("user_sponser_id" => $this->input->post('search_id'));
                     $table_to_pass = 'mst_users';
                     $fields_to_pass = '*';
-                    $arr_user = $this->register_model->getUserInformation($table_to_pass, $fields_to_pass, $condition_to_pass, $order_by_to_pass = '', $limit_to_pass = '', $debug_to_pass = 0);
+                    
+                    $arr_user = $this->register_model->getUserInformation($table_to_pass, $fields_to_pass, $condition_to_pass, $order_by_to_pass , $limit_to_pass = '', $debug_to_pass = 0);
                     $arr_user = end($arr_user);
                     
                     //get uplevel 1
                     $condition_to_pass = array("sponser_id" => $arr_user['sponser_id']);
                     $table_to_pass = 'mst_users';
                     $fields_to_pass = '*';
-                    $arr_user_data = $this->register_model->getUserInformation($table_to_pass, $fields_to_pass, $condition_to_pass, $order_by_to_pass = '', $limit_to_pass = '', $debug_to_pass = 0);
+                    $arr_user_data = $this->register_model->getUserInformation($table_to_pass, $fields_to_pass, $condition_to_pass, $order_by_to_pass, $limit_to_pass = '', $debug_to_pass = 0);
                     $data['arr_team_data'] = $arr_user_data;
                     $data['sponser_user'] = $arr_user;
                     
@@ -74,13 +75,13 @@ class Team_Details extends CI_Controller {
                         $data['sponser_id'] = $data['user_account']['user_sponser_id']; 
                         $table_to_passed = 'mst_users';
                         $fields_to_passed = '*';
-                        $arr_user_data = $this->register_model->getUserInformation($table_to_passed, $fields_to_passed, $condition_to_passed, $order_by_to_pass = '', $limit_to_pass = '', $debug_to_pass = 0);
+                        $arr_user_data = $this->register_model->getUserInformation($table_to_passed, $fields_to_passed, $condition_to_passed, $order_by_to_pass, $limit_to_pass = '', $debug_to_pass = 0);
                         $data['arr_team_data'] = $arr_user_data;
                         //logged user or (main) information
                         $condition_to_pass = array("user_sponser_id" => $data['user_account']['user_sponser_id']);
                         $table_to_pass = 'mst_users';
                         $fields_to_pass = '*';
-                        $arr_user = $this->register_model->getUserInformation($table_to_pass, $fields_to_pass, $condition_to_pass, $order_by_to_pass = '', $limit_to_pass = '', $debug_to_pass = 0);
+                        $arr_user = $this->register_model->getUserInformation($table_to_pass, $fields_to_pass, $condition_to_pass, $order_by_to_pass, $limit_to_pass = '', $debug_to_pass = 0);
                         $data['sponser_user'] = end($arr_user);
                  }
                    
@@ -88,13 +89,13 @@ class Team_Details extends CI_Controller {
                     $condition_to_pass = array("sponser_id" => $this->input->post('search_id'));
                     $table_to_pass = 'mst_users';
                     $fields_to_pass = '*';
-                    $arr_user_data = $this->register_model->getUserInformation($table_to_pass, $fields_to_pass, $condition_to_pass, $order_by_to_pass = '', $limit_to_pass = '', $debug_to_pass = 0);
+                    $arr_user_data = $this->register_model->getUserInformation($table_to_pass, $fields_to_pass, $condition_to_pass, $order_by_to_pass , $limit_to_pass = '', $debug_to_pass = 0);
                     $data['arr_team_data'] = $arr_user_data;
                     //logged user or (main) information
                     $condition_to_pass = array("user_sponser_id" => $this->input->post('search_id'));
                     $table_to_pass = 'mst_users';
                     $fields_to_pass = '*';
-                    $arr_user = $this->register_model->getUserInformation($table_to_pass, $fields_to_pass, $condition_to_pass, $order_by_to_pass = '', $limit_to_pass = '', $debug_to_pass = 0);
+                    $arr_user = $this->register_model->getUserInformation($table_to_pass, $fields_to_pass, $condition_to_pass, $order_by_to_pass, $limit_to_pass = '', $debug_to_pass = 0);
                     $data['sponser_user'] = end($arr_user);
              }
        
@@ -106,26 +107,26 @@ class Team_Details extends CI_Controller {
                 $data['sponser_id'] = $clickid;  
                 $table_to_passed = 'mst_users';
                 $fields_to_passed = '*';
-                $arr_user_data = $this->register_model->getUserInformation($table_to_passed, $fields_to_passed, $condition_to_passed, $order_by_to_pass = '', $limit_to_pass = '', $debug_to_pass = 0);
+                $arr_user_data = $this->register_model->getUserInformation($table_to_passed, $fields_to_passed, $condition_to_passed, $order_by_to_pass, $limit_to_pass = '', $debug_to_pass = 0);
                 $data['arr_team_data'] = $arr_user_data;
                 //logged user or (main) information
                     $condition_to_pass = array("user_sponser_id" => $clickid);
                     $table_to_pass = 'mst_users';
                     $fields_to_pass = '*';
-                    $arr_user = $this->register_model->getUserInformation($table_to_pass, $fields_to_pass, $condition_to_pass, $order_by_to_pass = '', $limit_to_pass = '', $debug_to_pass = 0);
+                    $arr_user = $this->register_model->getUserInformation($table_to_pass, $fields_to_pass, $condition_to_pass, $order_by_to_pass, $limit_to_pass = '', $debug_to_pass = 0);
                     $data['sponser_user'] = end($arr_user);
             }else{
                 $condition_to_passed = array("sponser_id" => $data['user_account']['user_sponser_id']);
                
                 $table_to_passed = 'mst_users';
                 $fields_to_passed = '*';
-                $arr_user_data = $this->register_model->getUserInformation($table_to_passed, $fields_to_passed, $condition_to_passed, $order_by_to_pass = '', $limit_to_pass = '', $debug_to_pass = 0);
+                $arr_user_data = $this->register_model->getUserInformation($table_to_passed, $fields_to_passed, $condition_to_passed, $order_by_to_pass, $limit_to_pass = '', $debug_to_pass = 0);
                 $data['arr_team_data'] = $arr_user_data;
                 //logged user or (main) information
                     $condition_to_pass = array("user_sponser_id" => $data['user_account']['user_sponser_id']);
                     $table_to_pass = 'mst_users';
                     $fields_to_pass = '*';
-                    $arr_user = $this->register_model->getUserInformation($table_to_pass, $fields_to_pass, $condition_to_pass, $order_by_to_pass = '', $limit_to_pass = '', $debug_to_pass = 0);
+                    $arr_user = $this->register_model->getUserInformation($table_to_pass, $fields_to_pass, $condition_to_pass, $order_by_to_pass, $limit_to_pass = '', $debug_to_pass = 0);
                     $data['sponser_user'] = end($arr_user);
                 
             }
